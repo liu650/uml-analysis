@@ -5,8 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PAGE extends Node {
-    //PAGE::= "NewPage: " PAGETITLE PAGESTUFF*
+
+    // PAGE::= "NewPage: " PAGETITLE PAGESTUFF*
     PAGETITLE pagetitle;
+
     List<PAGESTUFF> pstf = new ArrayList<>();
 
     @Override
@@ -15,23 +17,21 @@ public class PAGE extends Node {
         // Parse PAGETITLE
         pagetitle = new PAGETITLE();
         pagetitle.parse();
-
         // Parse PAGESTUFF
-        while(tokenizer.moreTokens() && !tokenizer.checkToken("NewPage:") && !tokenizer.checkToken("Section:")){
+        while (tokenizer.moreTokens() && !tokenizer.checkToken("NewPage:") && !tokenizer.checkToken("Section:")) {
             PAGESTUFF p = PAGESTUFF.make();
             p.parse();
             pstf.add(p);
-
         }
     }
 
     @Override
     public void evaluate() {
         pagetitle.evaluate();
-        for (PAGESTUFF ps: pstf) {
+        for (PAGESTUFF ps : pstf) {
             ps.evaluate();
         }
-        String end  = "\\end{frame}";
+        String end = "\\end{frame}";
         writer.println(end);
     }
 }

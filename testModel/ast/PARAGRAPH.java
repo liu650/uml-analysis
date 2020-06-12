@@ -1,7 +1,9 @@
 package ast;
 
 public class PARAGRAPH extends PAGESTUFF {
+
     CONTENT paragraph;
+
     @Override
     public void parse() {
         tokenizer.getAndCheckNext("Paragraph:");
@@ -12,11 +14,10 @@ public class PARAGRAPH extends PAGESTUFF {
     @Override
     public void evaluate() {
         paragraph.evaluate();
-        String end  = "\\leavevmode"+"\\newline";
+        String end = "\\leavevmode" + "\\newline";
         writer.println(end);
     }
 }
-
 /*
         sample paragraph:
         line 1 (string) \newline

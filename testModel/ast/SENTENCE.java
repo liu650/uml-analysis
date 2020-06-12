@@ -1,7 +1,9 @@
 package ast;
 
 import libs.Node;
+
 public class SENTENCE extends Node {
+
     String s;
 
     @Override
@@ -15,10 +17,7 @@ public class SENTENCE extends Node {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return s;
     }
 }
-
-
-

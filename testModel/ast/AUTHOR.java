@@ -3,8 +3,10 @@ package ast;
 import libs.Node;
 
 public class AUTHOR extends Node {
+
     // AUTHOR::= "Author: " CONTENT
     CONTENT authorContent;
+
     @Override
     public void parse() {
         tokenizer.getAndCheckNext("Author:");

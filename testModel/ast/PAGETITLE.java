@@ -1,12 +1,15 @@
 package ast;
 
-public class PAGETITLE extends TITLE{
+public class PAGETITLE extends TITLE {
+
     CONTENT pagetitle;
+
     @Override
     public void parse() {
-        pagetitle=new CONTENT();
+        pagetitle = new CONTENT();
         pagetitle.parse();
     }
+
     @Override
     public void evaluate() {
         writer.print("\\begin{frame}{");
@@ -14,8 +17,3 @@ public class PAGETITLE extends TITLE{
         writer.print("}\n");
     }
 }
-
-
-
-
-

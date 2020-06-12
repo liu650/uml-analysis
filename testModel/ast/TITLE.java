@@ -2,9 +2,11 @@ package ast;
 
 import libs.Node;
 
-public class TITLE extends Node{
+public class TITLE extends Node {
+
     // TITLE::="Title= " CONTENT “;”
     CONTENT titleContent = null;
+
     @Override
     public void parse() {
         tokenizer.getAndCheckNext("Title:");

@@ -3,12 +3,14 @@ package ast;
 import libs.Node;
 
 public class SIZE extends Node {
+
     // SIZE::= "Size: " ("LARGE" or "Large" or "large" or "small")
     String size = null;
+
     @Override
     public void parse() {
         tokenizer.getAndCheckNext("Size:");
-        switch (tokenizer.getNext()) {
+        switch(tokenizer.getNext()) {
             case "small":
                 size = "tiny";
                 break;
@@ -31,6 +33,6 @@ public class SIZE extends Node {
 
     @Override
     public void evaluate() {
-        // do nothing
+    // do nothing
     }
 }

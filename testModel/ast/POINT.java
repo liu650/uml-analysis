@@ -1,15 +1,17 @@
 package ast;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class POINT extends PAGESTUFF {
-    //POINT::= "BulletPoint: " (CONTENT)*
+
+    // POINT::= "BulletPoint: " (CONTENT)*
     List<CONTENT> loc = new ArrayList<>();
+
     @Override
     public void parse() {
         // Parse content
-
-        while(tokenizer.moreTokens() && tokenizer.checkToken("BulletPoint:")){
+        while (tokenizer.moreTokens() && tokenizer.checkToken("BulletPoint:")) {
             tokenizer.getNext();
             CONTENT c = new CONTENT();
             c.parse();
@@ -20,14 +22,13 @@ public class POINT extends PAGESTUFF {
     @Override
     public void evaluate() {
         writer.print("\\begin{itemize}\n");
-        for (CONTENT c: loc) {
+        for (CONTENT c : loc) {
             writer.print("\\item ");
             c.evaluate();
         }
         writer.println("\\end{itemize}\n");
     }
 }
-
 /*
 * sample:
 * \begin{itemize}

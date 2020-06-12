@@ -1,14 +1,16 @@
 package ast;
 
 import libs.Node;
-
 import java.util.HashSet;
 import java.util.Set;
 
 public class COLOR extends Node {
+
     // COLOR:: = "Color: " ("red" or "green" or ...)
     String color;
+
     Set<String> colorSet = new HashSet<>();
+
     @Override
     public void parse() {
         tokenizer.getAndCheckNext("Color:");
@@ -34,7 +36,8 @@ public class COLOR extends Node {
         colorSet.add("lightgray");
         colorSet.add("olive");
         colorSet.add("orange");
-        colorSet.add("blue"); // 19 basic colors of xcolor package
+        // 19 basic colors of xcolor package
+        colorSet.add("blue");
         if (!colorSet.contains(color)) {
             throw new RuntimeException("Color " + color + " not supported.");
         }
@@ -46,7 +49,7 @@ public class COLOR extends Node {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return color;
     }
 }

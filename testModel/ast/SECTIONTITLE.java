@@ -1,12 +1,15 @@
 package ast;
 
-public class SECTIONTITLE extends TITLE{
+public class SECTIONTITLE extends TITLE {
+
     CONTENT sectiontitle;
+
     @Override
     public void parse() {
-        sectiontitle=new CONTENT();
+        sectiontitle = new CONTENT();
         sectiontitle.parse();
     }
+
     @Override
     public void evaluate() {
         writer.print("\\section{");

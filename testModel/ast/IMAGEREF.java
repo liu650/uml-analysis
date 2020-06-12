@@ -2,15 +2,13 @@ package ast;
 
 import libs.Node;
 import libs.Tokenizer;
-
 import java.io.FileNotFoundException;
 
-public class IMAGEREF extends Node{
+public class IMAGEREF extends Node {
 
     String address;
 
-    public static IMAGEREF make(){
-
+    public static IMAGEREF make() {
         Tokenizer tokenizer = Tokenizer.getTokenizer();
         if (tokenizer.checkToken("Path:")) {
             return new IMAGEPATH();
@@ -18,6 +16,7 @@ public class IMAGEREF extends Node{
             throw new RuntimeException("Invalid value: " + tokenizer.getNext());
         }
     }
+
     @Override
     public void parse() throws FileNotFoundException {
         address = tokenizer.getNext();
@@ -28,8 +27,3 @@ public class IMAGEREF extends Node{
         writer.print(address);
     }
 }
-
-
-
-
-

@@ -1,13 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="0f33faa9-ec4a-4d58-80c5-9c1b79586f93" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_github_javaparser_javaparser_core_3_15_22.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Visitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/AUTHOR.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/AUTHOR.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/BI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/BI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/COLOR.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/COLOR.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/CONTENT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/CONTENT.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/IMAGEPATH.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/IMAGEPATH.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/IMAGEREF.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/IMAGEREF.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/IMAGES.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/IMAGES.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/PAGE.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/PAGE.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/PAGESTUFF.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/PAGESTUFF.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/PAGETITLE.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/PAGETITLE.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/PARAGRAPH.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/PARAGRAPH.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/POINT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/POINT.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/PROGRAM.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/PROGRAM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/SECTION.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/SECTION.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/SECTIONTITLE.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/SECTIONTITLE.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/SENTENCE.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/SENTENCE.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/SETTINGS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/SETTINGS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/SIZE.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/SIZE.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/TITLE.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/TITLE.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/libs/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/libs/Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/libs/Tokenizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/libs/Tokenizer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ui/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ui/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/AUTHOR.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/AUTHOR.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/BI.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/BI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/COLOR.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/COLOR.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/CONTENT.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/CONTENT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/IMAGEPATH.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/IMAGEPATH.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/IMAGEREF.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/IMAGEREF.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/IMAGES.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/IMAGES.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/PAGE.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/PAGE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/PAGESTUFF.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/PAGESTUFF.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/PAGETITLE.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/PAGETITLE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/PARAGRAPH.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/PARAGRAPH.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/POINT.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/POINT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/PROGRAM.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/PROGRAM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/SECTION.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/SECTION.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/SECTIONTITLE.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/SECTIONTITLE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/SENTENCE.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/SENTENCE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/SETTINGS.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/SETTINGS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/SIZE.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/SIZE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/TITLE.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/TITLE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/libs/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/libs/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/libs/Tokenizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/libs/Tokenizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ui/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ui/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uml-analysis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/uml-analysis.iml" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,40 +95,6 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/uml_analysis$Main.ic" NAME="Main Coverage Results" MODIFIED="1591773871002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="40" selection-start-line="40" selection-end-line="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testModel/ast/BI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -73,48 +105,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/test.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/testModel/ast/BI.java" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="124" />
-    <option name="y" value="157" />
-    <option name="width" value="1049" />
-    <option name="height" value="724" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="uml-analysis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="uml-analysis" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-    </panes>
+  <component name="ProjectId" id="1dAskZQsJj02yX05yjI86Wckjzo" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="true" />
-    <property name="Repository.Attach.Sources" value="true" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.24287485" />
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
@@ -124,19 +126,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.test.testOr1">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="11" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -163,16 +153,43 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="test.testOr1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uml-analysis" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="test" />
+      <option name="METHOD_NAME" value="testOr1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test.testRegex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uml-analysis" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="test" />
+      <option name="METHOD_NAME" value="testRegex" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.test" />
+      <item itemvalue="JUnit.test.testRegex" />
+      <item itemvalue="JUnit.test.testOr1" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.test.testOr1" />
+        <item itemvalue="JUnit.test.testRegex" />
         <item itemvalue="Application.test" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -184,140 +201,45 @@
     </task>
     <servers />
   </component>
-  <component name="ToolWindowManager">
-    <frame x="124" y="157" width="1049" height="724" extended-state="0" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24726911" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.28899837" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="CheckStyle" order="7" weight="0.32894737" />
-      <window_info anchor="bottom" id="Problems" order="8" weight="0.32894737" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32840723" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="11" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32894737" />
-      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.32956383" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-    </layout>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/testModel/ast/BI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.24287485" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>11</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>uml-analysis</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>com.github.javaparser:javaparser-core:3.5.2</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.24287485" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+  <component name="WindowStateProjectService">
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591916805122">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591916805122" />
+    <state width="1877" height="243" key="GridCell.Tab.0.bottom" timestamp="1591923979279">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="243" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591923979279" />
+    <state width="1877" height="243" key="GridCell.Tab.0.center" timestamp="1591923979279">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="243" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591923979279" />
+    <state width="1877" height="243" key="GridCell.Tab.0.left" timestamp="1591923979279">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="243" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591923979279" />
+    <state width="1877" height="243" key="GridCell.Tab.0.right" timestamp="1591923979279">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="243" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591923979279" />
+    <state x="472" y="114" key="SettingsEditor" timestamp="1591916727104">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="472" y="114" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1591916727104" />
+    <state x="696" y="431" width="591" height="224" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1591916757150">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="696" y="431" width="591" height="224" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1040@0.0.1920.1040" timestamp="1591916757150" />
   </component>
 </project>
