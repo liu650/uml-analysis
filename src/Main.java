@@ -19,6 +19,7 @@ public class Main {
             // Establish JavaParser AST root
             ArrayList<File> files = new ArrayList<>();
             File root = new File(projectDirectory);
+
             SourceRoot sourceRoot = new SourceRoot(root.toPath());
 
             // parse all java files under the package
