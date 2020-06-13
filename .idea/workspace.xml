@@ -20,14 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f33faa9-ec4a-4d58-80c5-9c1b79586f93" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/testModel/ast/Inter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Pair.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/META-INF/uml-analysis.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/MyClass.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/MyClass.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/Visitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/Visitor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/BI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/BI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/test.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyClass.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyClass.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Visitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Visitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dependencyEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dependencyEnum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/BI.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/BI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uml-analysis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/uml-analysis.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,9 +57,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -73,6 +77,14 @@
     <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.24287485" />
@@ -86,7 +98,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.test.testOr1">
+  <component name="RunManager" selected="JUnit.test">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="11" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -109,6 +121,15 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="test" />
       <module name="uml-analysis" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uml-analysis" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="test" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -138,13 +159,15 @@
       <item itemvalue="Application.test" />
       <item itemvalue="JUnit.test.testRegex" />
       <item itemvalue="JUnit.test.testOr1" />
+      <item itemvalue="JUnit.test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.test" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.test.testOr1" />
         <item itemvalue="JUnit.test.testRegex" />
         <item itemvalue="Application.test" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -158,8 +181,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1591771538354</updated>
+      <workItem from="1592033414174" duration="3568000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -171,6 +198,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591916805122">
@@ -185,29 +213,29 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="529" y="376" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592024917503" />
-    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1592032832719">
+    <state width="1877" height="305" key="GridCell.Tab.0.bottom" timestamp="1592036902694">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1592032832719" />
-    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1592032832719">
+    <state width="1877" height="305" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1592036902694" />
+    <state width="1877" height="305" key="GridCell.Tab.0.center" timestamp="1592036902694">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1592032832719" />
-    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1592032832719">
+    <state width="1877" height="305" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1592036902694" />
+    <state width="1877" height="305" key="GridCell.Tab.0.left" timestamp="1592036902694">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1592032832719" />
-    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1592032832719">
+    <state width="1877" height="305" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1592036902694" />
+    <state width="1877" height="305" key="GridCell.Tab.0.right" timestamp="1592036902694">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1592032832719" />
+    <state width="1877" height="305" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1592036902694" />
     <state x="472" y="114" key="SettingsEditor" timestamp="1592032095567">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="472" y="114" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1592032095567" />
-    <state x="696" y="431" width="591" height="224" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1591916757150">
+    <state x="696" y="431" width="591" height="231" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1592033428016">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="696" y="431" width="591" height="224" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1040@0.0.1920.1040" timestamp="1591916757150" />
+    <state x="696" y="431" width="591" height="231" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1040@0.0.1920.1040" timestamp="1592033428016" />
   </component>
 </project>

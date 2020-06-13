@@ -1,7 +1,7 @@
 NodeList:[
   {
     "fields": [{"modifier": "public", "Type": "Int", "Name":"PhoneNumber"}],
-    "methods": [{"modifier": "public", "name": "getNumber" ,"parameters": "Int id, String person", "returnType": "void" },
+    "methods": [{"modifier": "public", "name": "getNumber" ,",parameters": "Int id String person", "returnType": "void" },
       {"modifier": "public", "name": "getDay" ,"parameters": "Int a, String txt",  "returnType": "void" }],
     "importList": ["JUNIT", "JGraph"],
     "className": "Class A",
