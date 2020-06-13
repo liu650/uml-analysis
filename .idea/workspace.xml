@@ -20,19 +20,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f33faa9-ec4a-4d58-80c5-9c1b79586f93" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/javaparser_core_3_16_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/src/src.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/MyClass.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/grammar.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/src.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/com_github_javaparser_javaparser_core_3_15_22.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/javaparser_core_3_16_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/javaparser_core_3_16_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Box.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Box.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClassObject.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DiagramGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiagramGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyClass.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyClass.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/classEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/classEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dependencyEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dependencyEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Field.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Method.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Visitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/AUTHOR.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/BI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/COLOR.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/CONTENT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/IMAGEPATH.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/IMAGEREF.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/IMAGES.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/Inter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/PAGE.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/PAGESTUFF.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/PAGETITLE.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/PARAGRAPH.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/POINT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/PROGRAM.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/SECTION.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/SECTIONTITLE.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/SENTENCE.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/SETTINGS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/SIZE.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/TITLE.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/grammar.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/libs/Node.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/libs/Tokenizer.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/testModel/ui/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ui/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/uml-analysis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/uml-analysis.iml" afterDir="false" />
     </list>
@@ -92,17 +114,17 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.24287485" />
     <property name="settings.editor.selected.configurable" value="Console" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager" selected="Application.DiagramGenerator">
@@ -207,6 +229,10 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add new test" />
+    <option name="LAST_COMMIT_MESSAGE" value="add new test" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="534" y="259" key="#Configure_Path_Variables" timestamp="1592074459838">
       <screen x="64" y="23" width="1216" height="777" />
@@ -225,47 +251,51 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="529" y="376" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592024917503" />
-    <state width="1174" height="220" key="GridCell.Tab.0.bottom" timestamp="1592084475739">
+    <state x="260" y="23" key="CommitChangelistDialog2" timestamp="1592085028855">
+      <screen x="64" y="23" width="1216" height="777" />
+    </state>
+    <state x="260" y="23" key="CommitChangelistDialog2/64.23.1216.777/-293.-1057.1920.1057@64.23.1216.777" timestamp="1592085028855" />
+    <state width="1174" height="219" key="GridCell.Tab.0.bottom" timestamp="1592084918737">
       <screen x="64" y="23" width="1216" height="777" />
     </state>
     <state width="1877" height="283" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1592054150046" />
-    <state width="1174" height="220" key="GridCell.Tab.0.bottom/64.23.1216.777/-293.-1057.1920.1057@64.23.1216.777" timestamp="1592084475739" />
-    <state width="1174" height="220" key="GridCell.Tab.0.center" timestamp="1592084475738">
+    <state width="1174" height="219" key="GridCell.Tab.0.bottom/64.23.1216.777/-293.-1057.1920.1057@64.23.1216.777" timestamp="1592084918737" />
+    <state width="1174" height="219" key="GridCell.Tab.0.center" timestamp="1592084918735">
       <screen x="64" y="23" width="1216" height="777" />
     </state>
     <state width="1877" height="283" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1592054150045" />
-    <state width="1174" height="220" key="GridCell.Tab.0.center/64.23.1216.777/-293.-1057.1920.1057@64.23.1216.777" timestamp="1592084475738" />
-    <state width="1174" height="220" key="GridCell.Tab.0.left" timestamp="1592084475737">
+    <state width="1174" height="219" key="GridCell.Tab.0.center/64.23.1216.777/-293.-1057.1920.1057@64.23.1216.777" timestamp="1592084918735" />
+    <state width="1174" height="219" key="GridCell.Tab.0.left" timestamp="1592084918735">
       <screen x="64" y="23" width="1216" height="777" />
     </state>
     <state width="1877" height="283" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1592054150045" />
-    <state width="1174" height="220" key="GridCell.Tab.0.left/64.23.1216.777/-293.-1057.1920.1057@64.23.1216.777" timestamp="1592084475737" />
-    <state width="1174" height="220" key="GridCell.Tab.0.right" timestamp="1592084475738">
+    <state width="1174" height="219" key="GridCell.Tab.0.left/64.23.1216.777/-293.-1057.1920.1057@64.23.1216.777" timestamp="1592084918735" />
+    <state width="1174" height="219" key="GridCell.Tab.0.right" timestamp="1592084918736">
       <screen x="64" y="23" width="1216" height="777" />
     </state>
     <state width="1877" height="283" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1592054150045" />
-    <state width="1174" height="220" key="GridCell.Tab.0.right/64.23.1216.777/-293.-1057.1920.1057@64.23.1216.777" timestamp="1592084475738" />
-    <state width="1174" height="220" key="GridCell.Tab.1.bottom" timestamp="1592084477237">
+    <state width="1174" height="219" key="GridCell.Tab.0.right/64.23.1216.777/-293.-1057.1920.1057@64.23.1216.777" timestamp="1592084918736" />
+    <state width="1174" height="272" key="GridCell.Tab.1.bottom" timestamp="1592084691077">
       <screen x="64" y="23" width="1216" height="777" />
     </state>
-    <state width="1174" height="220" key="GridCell.Tab.1.bottom/64.23.1216.777/-293.-1057.1920.1057@64.23.1216.777" timestamp="1592084477237" />
-    <state width="1174" height="220" key="GridCell.Tab.1.center" timestamp="1592084477235">
+    <state width="1174" height="272" key="GridCell.Tab.1.bottom/64.23.1216.777/-293.-1057.1920.1057@64.23.1216.777" timestamp="1592084691077" />
+    <state width="1174" height="272" key="GridCell.Tab.1.center" timestamp="1592084691075">
       <screen x="64" y="23" width="1216" height="777" />
     </state>
-    <state width="1174" height="220" key="GridCell.Tab.1.center/64.23.1216.777/-293.-1057.1920.1057@64.23.1216.777" timestamp="1592084477235" />
-    <state width="1174" height="220" key="GridCell.Tab.1.left" timestamp="1592084477235">
+    <state width="1174" height="272" key="GridCell.Tab.1.center/64.23.1216.777/-293.-1057.1920.1057@64.23.1216.777" timestamp="1592084691075" />
+    <state width="1174" height="272" key="GridCell.Tab.1.left" timestamp="1592084691074">
       <screen x="64" y="23" width="1216" height="777" />
     </state>
-    <state width="1174" height="220" key="GridCell.Tab.1.left/64.23.1216.777/-293.-1057.1920.1057@64.23.1216.777" timestamp="1592084477235" />
-    <state width="1174" height="220" key="GridCell.Tab.1.right" timestamp="1592084477236">
+    <state width="1174" height="272" key="GridCell.Tab.1.left/64.23.1216.777/-293.-1057.1920.1057@64.23.1216.777" timestamp="1592084691074" />
+    <state width="1174" height="272" key="GridCell.Tab.1.right" timestamp="1592084691075">
       <screen x="64" y="23" width="1216" height="777" />
     </state>
-    <state width="1174" height="220" key="GridCell.Tab.1.right/64.23.1216.777/-293.-1057.1920.1057@64.23.1216.777" timestamp="1592084477236" />
-    <state x="208" y="23" key="SettingsEditor" timestamp="1592076278124">
+    <state width="1174" height="272" key="GridCell.Tab.1.right/64.23.1216.777/-293.-1057.1920.1057@64.23.1216.777" timestamp="1592084691075" />
+    <state x="208" y="23" key="SettingsEditor" timestamp="1592085789908">
       <screen x="64" y="23" width="1216" height="777" />
     </state>
     <state x="472" y="114" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1592032095567" />
-    <state x="208" y="23" key="SettingsEditor/64.23.1216.777/-293.-1057.1920.1057@64.23.1216.777" timestamp="1592076278124" />
+    <state x="208" y="23" key="SettingsEditor/64.23.1216.777/-293.-1057.1920.1057@64.23.1216.777" timestamp="1592085789908" />
     <state x="505" y="345" width="478" height="215" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1592074526224">
       <screen x="64" y="23" width="1216" height="777" />
     </state>
@@ -276,10 +306,10 @@
     </state>
     <state x="690" y="281" key="extract.method.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592042759817" />
     <state x="501" y="233" key="extract.method.dialog/64.23.1216.777/-293.-1057.1920.1057@64.23.1216.777" timestamp="1592077497231" />
-    <state x="373" y="166" width="598" height="490" key="find.popup" timestamp="1592076794380">
+    <state x="373" y="166" width="598" height="490" key="find.popup" timestamp="1592086124775">
       <screen x="64" y="23" width="1216" height="777" />
     </state>
-    <state x="373" y="166" width="598" height="490" key="find.popup/64.23.1216.777/-293.-1057.1920.1057@64.23.1216.777" timestamp="1592076794380" />
+    <state x="373" y="166" width="598" height="490" key="find.popup/64.23.1216.777/-293.-1057.1920.1057@64.23.1216.777" timestamp="1592086124775" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -290,9 +320,9 @@
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/DiagramGenerator.java</url>
-          <line>12</line>
-          <option name="timeStamp" value="5" />
+          <url>file://$PROJECT_DIR$/src/test.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

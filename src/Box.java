@@ -11,7 +11,7 @@ public class Box extends JPanel {
     private int width = 20;
     private int length = 10;
 
-    Box(String c, Position center) {
+    public Box(String c, Position center) {
         setBorder(BorderFactory.createLineBorder(Color.BLUE));
 
         this.classInfo = c;

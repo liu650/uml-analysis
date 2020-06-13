@@ -1,104 +1,54 @@
-import com.github.javaparser.StaticJavaParser;
-import com.github.javaparser.ast.CompilationUnit;
-import com.github.javaparser.utils.SourceRoot;
-
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.ArrayDeque;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.List;
+
 public class Main {
-
-    // size of Frame
-    // TODO: adjust frame size
-    static final int WIDTH = 1466;
-    static final int HEIGHT =  1466;
-
-    // format of boxes
-    // TODO: ADJUST width, height of box
-    // TODO: set color?
-    final int BoxWidth = 20;
-    final int boxHeight = 50;
-    final String BoxColor = "Red";
-
-    // TODO: unsure about modifiers
-    // List of boxes to draw
-    public ArrayList<Box> boxes = new ArrayList<>();
-    //public ArrayList<Arrow> arrows = new ArrayList<>();
-
+//    public List<Box> boxes = new ArrayList<>();
+//    public List<Arrow> arrows = new ArrayList<>();
+    //sudo position
+    public static Position UL= new Position(250,170);public static Position UM= new Position(450,170);public static Position UR= new Position(650,170);
+    public static Position ML= new Position(250,380);public static Position MM= new Position(450,380);public static Position MR= new Position(650,380);
+    public static Position DL= new Position(250,590);public static Position DM= new Position(450,590);public static Position DR= new Position(650,590);
 
     public static void main(String[] args) {
+        initialize();
+        try{
+            cleanUpJavaCache();
+        } catch (Exception e){
 
-        try {
-            // Get project directory from user
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Enter the path of your Project (preferably the path to your Model):");
-            String projectDirectory = scanner.nextLine();
-            System.out.println("Path is : " + projectDirectory);
-
-            // Establish JavaParser AST root
-            ArrayList<File> files = new ArrayList<>();
-            File root = new File(projectDirectory);
-
-            SourceRoot sourceRoot = new SourceRoot(root.toPath());
-
-            // parse all java files under the package
-            sourceRoot.tryToParse("");
-            sourceRoot.saveAll();
-            sourceRoot.getCompilationUnits();
-//            sourceRoot.parse("", new ParserConfiguration(), (SourceRoot.Callback) (path, absPath, result) -> {
-//
-//                return SourceRoot.Callback.Result.SAVE;
-//            });
-
-
-
-
-
-        } catch (Exception e) {
-            e.printStackTrace();
         }
 
-        // TODO: get info from results of java parser, fill (list)arrows and (list)boxes
-        fill();
-        // TODO: draw uml, complete draw()
-        draw();
     }
 
-    // recursively traverse the whole directory to parse every file.
-    private static void helper(File f)  throws FileNotFoundException{
-        // if this is a java file
-        if (f.isFile() && f.getName().matches("(?i).+\\.java$")){
-           parseJavaFile(f);
-        } else if (f.isDirectory()){
-            for (File child: f.listFiles()){
-                helper(child);
+    private static void initialize(){
+        //Sodo Boxes 3*3
+         Box box1 = new Box("Class1", UL);  Box box2 = new Box("Class2", UM); Box box3 = new Box("Class3", UR);
+         Box box4 = new Box("Class4", ML);  Box box5 = new Box("Class5", MM); Box box6 = new Box("Class6", MR);
+         Box box7 = new Box("Class7", DL); Box box8 = new Box("Class8", DM); Box box9 = new Box("Class9", DR);
+         //TODO: Box missing  !!!field and !!!method information
+         List<Box> boxes = new ArrayList<>();
+         boxes.add(box1); boxes.add(box2); boxes.add(box3);
+         boxes.add(box4); boxes.add(box5); boxes.add(box6);
+         boxes.add(box7); boxes.add(box7); boxes.add(box9);
+         List<Arrow> arrows = new ArrayList<>();
+        JFrame jFrame = new JFrame(); //initialize
+        jFrame.setSize(990, 770);// set size of window
+        jFrame.setBackground(Color.WHITE);
+        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//set open-close model
+        jFrame.setContentPane(new DiagramGenerator(boxes, arrows));// set content
+        jFrame.setTitle("Sample Graph");//set title
+        jFrame.setVisible(true);// framework is visible
+        jFrame.setLocationRelativeTo(null);// the window at middle of the screen
+    }
+
+    private static void cleanUpJavaCache() throws IOException {
+        String productionPath =  "./out/production";
+            if (new File(productionPath).exists()) {
+                Runtime.getRuntime().exec("rm -r " + productionPath);
+                System.out.println("Java cache is removed successfully.");
             }
-        }
-    }
-
-    // parse java file.
-    private static void parseJavaFile(File f) throws FileNotFoundException {
-
-//        CompilationUnit cu = sourceRoot.parse("", "Blabla.java");
-        CompilationUnit cu = StaticJavaParser.parse(f);
-    }
-
-    private static void draw() {
-        JFrame frame = new JFrame("My Drawing");
-        Canvas canvas = new DiagramGenerator();
-        canvas.setSize(WIDTH, HEIGHT);
-        frame.add(canvas);
-        frame.pack();
-        frame.setVisible(true);
-        // TODO: add boxes and arrows to frame
-        // TODO: iteratively(for loop) add arrows and boxes to frame
-        //TODO Graph DRAWING: recommended approach --Graphics2D (Difficult add on Canvas !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!)
-    }
-
-    private static void fill() {
-        // TODO: create boxes and arrows object, add them to lists(arrows, boxes defined as public fields of main class)
     }
 }
