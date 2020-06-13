@@ -24,6 +24,7 @@ public class Main {
             // parse all java files under the package
             sourceRoot.tryToParse("");
             sourceRoot.saveAll();
+            sourceRoot.getCompilationUnits();
 //            sourceRoot.parse("", new ParserConfiguration(), (SourceRoot.Callback) (path, absPath, result) -> {
 //
 //                return SourceRoot.Callback.Result.SAVE;

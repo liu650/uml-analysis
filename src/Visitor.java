@@ -5,6 +5,8 @@ public class Visitor extends VoidVisitorAdapter {
 
     @Override
     public void visit(MethodCallExpr methodCall, Object arg){
-        
+//        super();
+        MyClass temp = new MyClass();
+
     }
 }

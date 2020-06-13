@@ -20,59 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f33faa9-ec4a-4d58-80c5-9c1b79586f93" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_github_javaparser_javaparser_core_3_15_22.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Visitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MyClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MyClass.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/classEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dependencyEnum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/AUTHOR.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/AUTHOR.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/BI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/BI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/COLOR.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/COLOR.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/CONTENT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/CONTENT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/IMAGEPATH.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/IMAGEPATH.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/IMAGEREF.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/IMAGEREF.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/IMAGES.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/IMAGES.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/PAGE.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/PAGE.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/PAGESTUFF.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/PAGESTUFF.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/PAGETITLE.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/PAGETITLE.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/PARAGRAPH.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/PARAGRAPH.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/POINT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/POINT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/PROGRAM.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/PROGRAM.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/SECTION.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/SECTION.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/SECTIONTITLE.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/SECTIONTITLE.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/SENTENCE.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/SENTENCE.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/SETTINGS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/SETTINGS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/SIZE.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/SIZE.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/TITLE.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/TITLE.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/libs/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/libs/Node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/libs/Tokenizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/libs/Tokenizer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ui/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ui/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/Visitor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/test.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testModel/ast/AUTHOR.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/AUTHOR.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testModel/ast/BI.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/BI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testModel/ast/COLOR.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/COLOR.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testModel/ast/CONTENT.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/CONTENT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testModel/ast/IMAGEPATH.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/IMAGEPATH.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testModel/ast/IMAGEREF.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/IMAGEREF.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testModel/ast/IMAGES.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/IMAGES.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testModel/ast/PAGE.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/PAGE.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testModel/ast/PAGESTUFF.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/PAGESTUFF.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testModel/ast/PAGETITLE.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/PAGETITLE.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testModel/ast/PARAGRAPH.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/PARAGRAPH.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testModel/ast/POINT.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/POINT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testModel/ast/PROGRAM.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/PROGRAM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testModel/ast/SECTION.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/SECTION.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testModel/ast/SECTIONTITLE.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/SECTIONTITLE.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testModel/ast/SENTENCE.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/SENTENCE.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testModel/ast/SETTINGS.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/SETTINGS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testModel/ast/SIZE.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/SIZE.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testModel/ast/TITLE.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/TITLE.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testModel/libs/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/libs/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testModel/libs/Tokenizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/libs/Tokenizer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testModel/ui/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ui/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uml-analysis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/uml-analysis.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Visitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Visitor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +55,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -122,6 +79,9 @@
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -217,6 +177,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591916805122" />
+    <state x="673" y="270" key="#com.intellij.ide.util.MemberChooser" timestamp="1592025977524">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="673" y="270" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1592025977524" />
+    <state x="529" y="376" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1592024917503">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="529" y="376" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592024917503" />
     <state width="1877" height="243" key="GridCell.Tab.0.bottom" timestamp="1591923979279">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
