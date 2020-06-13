@@ -158,9 +158,9 @@
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.test" />
-      <item itemvalue="JUnit.test.testRegex" />
-      <item itemvalue="JUnit.test.testOr1" />
       <item itemvalue="JUnit.test" />
+      <item itemvalue="JUnit.test.testOr1" />
+      <item itemvalue="JUnit.test.testRegex" />
     </list>
     <recent_temporary>
       <list>
