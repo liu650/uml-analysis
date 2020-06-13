@@ -1,4 +1,4 @@
-NodeList:[
+"NodeList":[
   {
     "fields": [{"modifier": "public", "Type": "Int", "Name":"PhoneNumber"}],
     "methods": [{"modifier": "public", "name": "getNumber" ,",parameters": "Int id String person", "returnType": "void" },
