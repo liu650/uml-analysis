@@ -19,12 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f33faa9-ec4a-4d58-80c5-9c1b79586f93" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Field.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Method.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MyClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0f33faa9-ec4a-4d58-80c5-9c1b79586f93" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -200,7 +195,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add new test" />
     <MESSAGE value="Merge remote-tracking branch 'origin/visualStructure' into drawing&#10;&#10;# Conflicts:&#10;#&#9;src/Box.java&#10;#&#9;src/DiagramGenerator.java&#10;#&#9;src/MyClass.json&#10;#&#9;src/classEnum.java&#10;#&#9;src/dependencyEnum.java&#10;#&#9;src/test.java&#10;#&#9;testModel/ui/Main.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/visualStructure' into drawing&#10;&#10;# Conflicts:&#10;#&#9;src/Box.java&#10;#&#9;src/DiagramGenerator.java&#10;#&#9;src/MyClass.json&#10;#&#9;src/classEnum.java&#10;#&#9;src/dependencyEnum.java&#10;#&#9;src/test.java&#10;#&#9;testModel/ui/Main.java" />
+    <MESSAGE value="add files back" />
+    <option name="LAST_COMMIT_MESSAGE" value="add files back" />
   </component>
   <component name="WindowStateProjectService">
     <state x="534" y="259" key="#Configure_Path_Variables" timestamp="1592074459838">
@@ -220,10 +216,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="529" y="376" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592024917503" />
-    <state x="260" y="23" key="CommitChangelistDialog2" timestamp="1592086333456">
+    <state x="260" y="23" key="CommitChangelistDialog2" timestamp="1592087009556">
       <screen x="64" y="23" width="1216" height="777" />
     </state>
-    <state x="260" y="23" key="CommitChangelistDialog2/64.23.1216.777/-293.-1057.1920.1057@64.23.1216.777" timestamp="1592086333456" />
+    <state x="260" y="23" key="CommitChangelistDialog2/64.23.1216.777/-293.-1057.1920.1057@64.23.1216.777" timestamp="1592087009556" />
     <state width="1174" height="219" key="GridCell.Tab.0.bottom" timestamp="1592084918737">
       <screen x="64" y="23" width="1216" height="777" />
     </state>
