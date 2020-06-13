@@ -2,7 +2,6 @@ import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.utils.SourceRoot;
 import org.junit.Test;
 
-import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -19,15 +18,16 @@ public class test {
 //            System.out.println("Enter the path of your Project (preferably the path to your Model):");
 //            String projectDirectory = scanner.nextLine();
             Visitor visitor = new Visitor();
-            String projectDirectory = "testModel/ast";
-            System.setIn(new ByteArrayInputStream(projectDirectory.getBytes()));
-
-            System.out.println("Path is : " + projectDirectory);
+            String pathAST = "testModel/ast";
+            String pathLIBS = "testModel/libs";
+//            System.setIn(new ByteArrayInputStream(projectDirectory.getBytes()));
+//
+//            System.out.println("Path is : " + projectDirectory);
 
 
             // Establish JavaParser AST root
             ArrayList<File> files = new ArrayList<>();
-            File root = new File(projectDirectory);
+            File root = new File(pathLIBS);
             System.out.println("file children number: " + root.listFiles().length);
 
             SourceRoot sourceRoot = new SourceRoot(Path.of(root.getAbsolutePath()));

@@ -1,12 +1,10 @@
-import java.util.List;
-
 public class Method {
     private String modifier;
     private String returnType;
     private String name;
-    private List<String> parameters;
+    private String parameters;
 
-    public Method(String modifier, String returnType, String name, List<String> parameters) {
+    public Method(String modifier, String returnType, String name, String parameters) {
         this.modifier = modifier;
         this.returnType = returnType;
         this.name = name;
@@ -37,11 +35,11 @@ public class Method {
         this.name = name;
     }
 
-    public List<String> getParameters() {
+    public String getParameters() {
         return parameters;
     }
 
-    public void setParameters(List<String> parameters) {
+    public void setParameters(String parameters) {
         this.parameters = parameters;
     }
 }

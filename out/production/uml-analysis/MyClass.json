@@ -24,6 +24,6 @@ NodeList:[
 
  DependencyList: [[Class1, Class2, "Association"],[Class1, Parent2, "Inheritance"], [Class1, "com.github.junitTest", "Import"]]
 
-// 不用了
+// 不用了, 用String来表示
 classEnum  = [CLASS, INTERFACE, ABSTRACTCLASS,]
 dependencyEnum = [Association, Import, Inheritance, Realization]

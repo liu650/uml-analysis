@@ -12,7 +12,7 @@ public class MyClass {
     // done
     private String className;
     // TODO
-    private classEnum classType;
+    private String classType;
     // TODO
     private  List<Object> dependencyList;
 
@@ -58,11 +58,11 @@ public class MyClass {
         this.className = className;
     }
 
-    public classEnum getClassType() {
+    public String getClassType() {
         return classType;
     }
 
-    public void setClassType(classEnum classType) {
+    public void setClassType(String classType) {
         this.classType = classType;
     }
 
