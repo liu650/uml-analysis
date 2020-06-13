@@ -20,15 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f33faa9-ec4a-4d58-80c5-9c1b79586f93" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/MyClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MyClass.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/classEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dependencyEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testModel/ast/Inter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/Visitor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/MyClass.json" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/MyClass.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyClass.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyClass.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Visitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Visitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dependencyEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dependencyEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +55,7 @@
       <list>
         <option value="Class" />
         <option value="Enum" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -73,7 +73,7 @@
     <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.24287485" />
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
@@ -185,26 +185,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="529" y="376" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592024917503" />
-    <state width="1877" height="243" key="GridCell.Tab.0.bottom" timestamp="1591923979279">
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1592032832719">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="243" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591923979279" />
-    <state width="1877" height="243" key="GridCell.Tab.0.center" timestamp="1591923979279">
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1592032832719" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1592032832719">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="243" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591923979279" />
-    <state width="1877" height="243" key="GridCell.Tab.0.left" timestamp="1591923979279">
+    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1592032832719" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1592032832719">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="243" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591923979279" />
-    <state width="1877" height="243" key="GridCell.Tab.0.right" timestamp="1591923979279">
+    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1592032832719" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1592032832719">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="243" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591923979279" />
-    <state x="472" y="114" key="SettingsEditor" timestamp="1591916727104">
+    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1592032832719" />
+    <state x="472" y="114" key="SettingsEditor" timestamp="1592032095567">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="472" y="114" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1591916727104" />
+    <state x="472" y="114" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1592032095567" />
     <state x="696" y="431" width="591" height="224" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1591916757150">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

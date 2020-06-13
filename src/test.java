@@ -36,6 +36,10 @@ public class test {
             // parse all java files under the package
             sourceRoot.tryToParse("");
             List<CompilationUnit> cus = (ArrayList<CompilationUnit>) sourceRoot.getCompilationUnits();
+            for (CompilationUnit c : cus){
+                MyClass one = new MyClass();
+                c.accept(new Visitor(),one);
+            }
 //            cus.get(0).accept(new ModifierVisitor<Void>() {
 //                /**
 //                 * For every if-statement, see if it has a comparison using "!=".

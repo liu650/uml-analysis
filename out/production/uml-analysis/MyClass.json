@@ -25,4 +25,4 @@ NodeList:[
  DependencyList: [[Class1, Class2, "Association"],[Class1, Parent2, "Inheritance"], [Class1, "com.github.junitTest", "Import"]]
 
 classEnum  = [CLASS, INTERFACE, ABSTRACTCLASS,]
-dependencyEnum = Association, Import, Inheritance
+dependencyEnum = [Association, Import, Inheritance, Realization]

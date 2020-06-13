@@ -2,11 +2,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MyClass {
+
+    // TODO
     private List<Object> fields;
+    // done
     private List<Object> methods;
+    // TODO
     private List<Object> importList;
+    // done
     private String className;
+    // TODO
     private classEnum classType;
+    // TODO
     private  List<Object> dependencyList;
 
 
