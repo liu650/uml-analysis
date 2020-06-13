@@ -7,7 +7,7 @@ public class Box {
     public List<String> methodsInfo;
     public Position center;
 
-    Box(String c, Position center) {
+    public Box(String c, Position center) {
         this.classInfo = c;
         this.center = center;
         this.fieldsInfo = new ArrayList<>();
@@ -15,6 +15,7 @@ public class Box {
     }
 
     public void drawBox(){
+
 
     }
 }
