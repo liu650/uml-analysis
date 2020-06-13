@@ -4,9 +4,9 @@ import java.util.List;
 public class MyClass {
 
     // TODO
-    private List<Object> fields;
+    private List<Field> fields;
     // done
-    private List<Object> methods;
+    private List<Method> methods;
     // TODO
     private List<Object> importList;
     // done
@@ -26,19 +26,19 @@ public class MyClass {
 
 
 
-    public List<Object> getFields() {
+    public List<Field> getFields() {
         return fields;
     }
 
-    public void setFields(List<Object> fields) {
+    public void setFields(List<Field> fields) {
         this.fields = fields;
     }
 
-    public List<Object> getMethods() {
+    public List<Method> getMethods() {
         return methods;
     }
 
-    public void setMethods(List<Object> methods) {
+    public void setMethods(List<Method> methods) {
         this.methods = methods;
     }
 

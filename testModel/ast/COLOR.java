@@ -4,7 +4,7 @@ import libs.Node;
 import java.util.HashSet;
 import java.util.Set;
 
-public class COLOR extends Node {
+class COLOR extends Node {
 
     // COLOR:: = "Color: " ("red" or "green" or ...)
     String color;
