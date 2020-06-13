@@ -1,5 +1,5 @@
 public enum classEnum {
-    CLASS,INTERFACE, ABSTRACTCLASS,
+    CONCRETE, INTERFACE, ABSTRACT,
 }
 
 

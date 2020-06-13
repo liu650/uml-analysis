@@ -14,9 +14,6 @@ public class Main {
 
     public static String outputFolder = "input/";
 
-    public static String testFolder = "test/";
-
-    // public static String inputFile = testFolder + "image_path.thtml";
     public static String inputFile;
 
     public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException {
@@ -52,7 +49,8 @@ public class Main {
             Node.closeWriter();
             // take the beamer input, and convert it to slides output
             // any failure encounter here will throw errors
-            generatePdf(outputFolder);
+
+            // TODO: generate image here?
             System.out.println("Please check your output result under 'out/' folder.");
         } catch (RuntimeException e) {
             Node.closeWriter();
