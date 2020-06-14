@@ -4,16 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DiagramGenerator extends JPanel {
-    //1 2 3
-    //7 9 8
-    //4 5 6
-    public static Position UL= new Position(50,30);public static Position UM= new Position(350,30);public static Position UR= new Position(600,30);
-    public static Position ML= new Position(50,300);public static Position MM= new Position(350,300);public static Position MR= new Position(600,300);
-    public static Position DL= new Position(50,550);public static Position DM= new Position(350,550);public static Position DR= new Position(600,550);
-    //Edge endPoint
-    public static Position ULE= new Position(250,122);public static Position UME= new Position(450,214);public static Position URE= new Position(600,122);
-    public static Position MLE= new Position(250,390);public static Position MME= new Position(450,392);public static Position MRE= new Position(600,392);
-    public static Position DLE= new Position(250,642);public static Position DME= new Position(450,550);public static Position DRE= new Position(600,642);
+    private static int x_offset = 300, y_offset = 260;
+    private static int class_width = 200, class_height = 184;
+    static Position upperLeft = new Position(30, 30);
+
+    private ArrayList<Position> localPositions = findAllPosition(upperLeft, x_offset, y_offset);
+    public static Position MM= new Position(upperLeft.x + 1 * x_offset, upperLeft.y + 1 * y_offset);
+
     public List<Box> iboxes = new ArrayList<>();
     public List<Arrow> iarrows = new ArrayList<>();
 
@@ -22,142 +19,81 @@ public class DiagramGenerator extends JPanel {
         this. iarrows = arrows;
     }
 
-    //1 2 3
-    //7 9 8
-    //4 5 6
     public void paint (Graphics gp) {
-         Box currBox;//keep track of the current box
+        int numberOfBox = 8;
+
+        Box currBox;//keep track of the current box
         //painter--set color before using
         BasicStroke bs = new BasicStroke( 10.1f,BasicStroke.CAP_ROUND,BasicStroke.JOIN_BEVEL);
         super.paint(gp);
         Graphics2D gp2d = (Graphics2D) gp;
 
+        // draw line from all the boxes to center
+        // use positionIndex as below
+        //1 2 3
+        //7 9 8
+        //4 5 6
+        for (int i = localPositions.size() - numberOfBox; i< numberOfBox -1; i++){
+            drawLineToCenter(gp2d, localPositions, i);
+        }
 
+        // draw all the classes
+        for (int i = localPositions.size() - numberOfBox; i < localPositions.size(); i++){
+            int boxIndex =  i + numberOfBox - localPositions.size();
+            drawClass(gp2d, localPositions.get(i), "Class." + Integer.toString(boxIndex));
+        }
 
-        //draw a class(box)
-        gp2d.setColor(Color.DARK_GRAY);
-        gp2d.fillRoundRect(UL.x,UL.y, 200,184,20,20);
-        gp2d.setColor(Color.WHITE);
-        gp2d.drawString("Class.1", UL.x+15,UL.y+15);
-        gp2d.drawLine(UL.x,UL.y+20, UL.x+200, UL.y+20);
-        gp2d.drawString("field", UL.x+15,UL.y+35);
-        gp2d.drawLine(UL.x,UL.y+90, UL.x+200, UL.y+90);
-        gp2d.drawString("method", UL.x+15,UL.y+100);
-        //draw line/arrow
-        gp2d.setColor(Color.DARK_GRAY);
-        gp2d.drawLine(MM.x+100,MM.y+94, ULE.x,ULE.y);
-
-
-
-        //draw a class(box)
-        gp2d.setColor(Color.DARK_GRAY);
-        gp2d.fillRoundRect(UM.x,UM.y, 200,184,20,20);
-        gp2d.setColor(Color.WHITE);
-        gp2d.drawString("Class.2", UM.x+15,UM.y+15);
-        gp2d.drawLine(UM.x,UM.y+20, UM.x+200, UM.y+20);
-        gp2d.drawString("field", UM.x+15,UM.y+35);
-        gp2d.drawLine(UM.x,UM.y+90, UM.x+200, UM.y+90);
-        gp2d.drawString("method", UM.x+15,UM.y+100);
-        //draw line/arrow
-        gp2d.setColor(Color.DARK_GRAY);
-        gp2d.drawLine(MM.x+100,MM.y+94,UME.x,UME.y);
-
-        //draw a class(box)
-        gp2d.setColor(Color.DARK_GRAY);
-        gp2d.fillRoundRect(UR.x,UR.y, 200,184,20,20);
-        gp2d.setColor(Color.WHITE);
-        gp2d.drawString("Class.3", UR.x+15,UR.y+15);
-        gp2d.drawLine(UR.x,UR.y+20, UR.x+200, UR.y+20);
-        gp2d.drawString("field", UR.x+15,UR.y+35);
-        gp2d.drawLine(UR.x,UR.y+90, UR.x+200, UR.y+90);
-        gp2d.drawString("method", UR.x+15,UR.y+100);
-        //draw line/arrow
-        gp2d.setColor(Color.DARK_GRAY);
-        gp2d.drawLine(MM.x+100,MM.y+94,URE.x,URE.y);
-
-
-        //draw a class(box)
-        gp2d.setColor(Color.DARK_GRAY);
-        gp2d.fillRoundRect(MR.x,MR.y, 200,184,20,20);
-        gp2d.setColor(Color.WHITE);
-        gp2d.drawString("Class.8", MR.x+15,MR.y+15);
-        gp2d.drawLine(MR.x,MR.y+20, MR.x+200, MR.y+20);
-        gp2d.drawString("field", MR.x+15,MR.y+35);
-        gp2d.drawLine(MR.x,MR.y+90, MR.x+200, MR.y+90);
-        gp2d.drawString("method", MR.x+15,MR.y+100);
-        //draw line/arrow
-        gp2d.setColor(Color.DARK_GRAY);
-        gp2d.drawLine(MM.x+100,MM.y+94,MRE.x,MRE.y);
-
-
-        //draw a class(box)
-        gp2d.setColor(Color.DARK_GRAY);
-        gp2d.fillRoundRect(DL.x,DL.y, 200,184,20,20);
-        gp2d.setColor(Color.WHITE);
-        gp2d.drawString("Class.4", DL.x+15,DL.y+15);
-        gp2d.drawLine(DL.x,DL.y+20, DL.x+200, DL.y+20);
-        gp2d.drawString("field", DL.x+15,DL.y+35);
-        gp2d.drawLine(DL.x,DL.y+90, DL.x+200, DL.y+90);
-        gp2d.drawString("method", DL.x+15,DL.y+100);
-        //draw line/arrow
-        gp2d.setColor(Color.DARK_GRAY);
-        gp2d.drawLine(MM.x+100,MM.y+94,DLE.x,DLE.y);
-
-
-        //draw a class(box)
-        gp2d.setColor(Color.DARK_GRAY);
-        gp2d.fillRoundRect(DM.x,DM.y, 200,184,20,20);
-        gp2d.setColor(Color.WHITE);
-        gp2d.drawString("Class.5", DM.x+15,DM.y+15);
-        gp2d.drawLine(DM.x,DM.y+20, DM.x+200, DM.y+20);
-        gp2d.drawString("field", DM.x+15,DM.y+35);
-        gp2d.drawLine(DM.x,DM.y+90, DM.x+200, DM.y+90);
-        gp2d.drawString("method", DM.x+15,DM.y+100);
-        //draw line/arrow
-        gp2d.setColor(Color.DARK_GRAY);
-        gp2d.drawLine(MM.x+100,MM.y+94,DME.x,DME.y);
-
-
-        //draw a class(box)
-        gp2d.setColor(Color.DARK_GRAY);
-        gp2d.fillRoundRect(DR.x,DR.y, 200,184,20,20);
-        gp2d.setColor(Color.WHITE);
-        gp2d.drawString("Class.6", DR.x+15,DR.y+15);
-        gp2d.drawLine(DR.x,DR.y+20, DR.x+200, DR.y+20);
-        gp2d.drawString("field", DR.x+15,DR.y+35);
-        gp2d.drawLine(DR.x,DR.y+90, DR.x+200, DR.y+90);
-        gp2d.drawString("method", DR.x+15,DR.y+100);
-        //draw line/arrow
-        gp2d.setColor(Color.DARK_GRAY);
-        gp2d.drawLine(MM.x+100,MM.y+94,DRE.x,DRE.y);
-
-
-        //draw a class(box)
-        gp2d.setColor(Color.DARK_GRAY);
-        gp2d.fillRoundRect(ML.x,ML.y, 200,184,20,20);
-        gp2d.setColor(Color.WHITE);
-        gp2d.drawString("Class.7", ML.x+15,ML.y+15);
-        gp2d.drawLine(ML.x,ML.y+20, ML.x+200, ML.y+20);
-        gp2d.drawString("field", ML.x+15,ML.y+35);
-        gp2d.drawLine(ML.x,ML.y+90, ML.x+200, ML.y+90);
-        gp2d.drawString("method", ML.x+15,ML.y+100);
-        //draw line/arrow
-        gp2d.setColor(Color.DARK_GRAY);
-        gp2d.drawLine(MM.x+100,MM.y+94,MLE.x,MLE.y);
-
-        gp2d.setColor(Color.DARK_GRAY);
-        gp2d.drawRect(820,40,140,300);
-        gp2d.drawString("annotaion", 835,55);
-        //draw a class(box)
-        gp2d.fillRoundRect(MM.x,MM.y, 200,184,20,20);
-        gp2d.setColor(Color.WHITE);
-        gp2d.drawString("Class.9", MM.x+15,MM.y+15);
-        gp2d.drawLine(MM.x,MM.y+20, MM.x+200, MM.y+20);
-        gp2d.drawString("field", MM.x+15,MM.y+35);
-        gp2d.drawLine(MM.x,MM.y+90, MM.x+200, MM.y+90);
-        gp2d.drawString("method", MM.x+15,MM.y+100);
-
+        drawAnnotation(gp2d);
     }
 
+    // draw a line from the given index position to center position
+    // Assume the center position should the last item in the list
+    private void drawLineToCenter(Graphics2D gp2d, ArrayList<Position> localPositions, int positionIndex){
+         Position center = localPositions.get(localPositions.size() - 1);
+         Position givenPosition = localPositions.get(positionIndex);
+         gp2d.setColor(Color.DARK_GRAY);
+         gp2d.drawLine(givenPosition.x + class_width/2, givenPosition.y + class_height/2 ,
+                 center.x + class_width/2, center.y + class_height/2);
+    }
+
+    private void drawClass(Graphics2D gp2d, Position classPosition, String className) {
+        gp2d.setColor(Color.DARK_GRAY);
+        gp2d.fillRoundRect(classPosition.x, classPosition.y, class_width, class_height, 20, 20);
+        gp2d.setColor(Color.WHITE);
+        gp2d.drawString(className, classPosition.x + 15, classPosition.y + 15);
+        gp2d.drawLine(classPosition.x, classPosition.y + 20, classPosition.x + 200, classPosition.y + 20);
+        gp2d.drawString("field", classPosition.x + 15, classPosition.y + 35);
+        gp2d.drawLine(classPosition.x, classPosition.y + 90, classPosition.x + 200, classPosition.y + 90);
+        gp2d.drawString("method", classPosition.x + 15, classPosition.y + 100);
+    }
+
+    private void drawAnnotation(Graphics2D gp2d) {
+        int annotation_x_offset = -80; //The value is intentionally Negative
+        Position annotaionBox = new Position(upperLeft.x + x_offset * 3 + annotation_x_offset, 40);
+        gp2d.setColor(Color.DARK_GRAY);
+        gp2d.drawRect(annotaionBox.x,annotaionBox.y,140,300);
+        gp2d.drawString("annotation", annotaionBox.x + 30,annotaionBox.y + 15);
+    }
+
+    //1 2 3
+    //7 9 8
+    //4 5 6
+    protected static ArrayList<Position> findAllPosition(Position upperLeft, int x_offset, int y_offset){
+        ArrayList<Position> positions= new ArrayList<>();
+
+        //process row 1 and row 3 with give order
+        for (int j = 0; j<3; j+=2){
+            for (int i = 0; i<3; i++){
+                positions.add(new Position(upperLeft.x + i * x_offset, upperLeft.y + j * y_offset));
+            }
+        }
+
+        //process row 2
+        positions.add(new Position(upperLeft.x + 0 * x_offset, upperLeft.y + 1 * y_offset));
+        positions.add(new Position(upperLeft.x + 2 * x_offset, upperLeft.y + 1 * y_offset));
+        positions.add(new Position(upperLeft.x + 1 * x_offset, upperLeft.y + 1 * y_offset));
+
+        return positions;
+    }
 
 }
