@@ -1,5 +1,6 @@
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.utils.SourceRoot;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.File;
@@ -113,12 +114,44 @@ public class test {
         Triplet c = new Triplet("a", "b", DependEnum.REALIZATION);
         Triplet d = new Triplet("a", "b", DependEnum.REALIZATION);
         a.add(c);
-        if (!a.contains(d)){
+        if (!a.contains(d)) {
             a.add(d);
         }
         assertTrue(a.contains(d));
-        assertEquals(1,a.size());
+        assertEquals(1, a.size());
+    }
+    @Test
+    public void testClassDrawing() {
+        List<CompilationUnit> cus = importClassFromFile();
+    }
 
+    // TODO: the following method uses part of the code from testOr1, which is an incomplete version,
+    //  and should be replaced in final stage.
+    private List<CompilationUnit> importClassFromFile() {
+        String pathAST = "testModel/ast";
+        String pathLIBS = "testModel/libs";
+
+        try {
+            // Establish JavaParser AST root
+            File root = new File(pathLIBS);
+            System.out.println("file children number: " + root.listFiles().length);
+
+            SourceRoot sourceRoot = new SourceRoot(Path.of(root.getAbsolutePath()));
+            System.out.println(sourceRoot.getRoot());
+
+            // parse all java files under the package
+            sourceRoot.tryToParse("");
+            List<CompilationUnit> cus = (ArrayList<CompilationUnit>) sourceRoot.getCompilationUnits();
+            for (CompilationUnit c : cus) {
+                MyClass one = new MyClass();
+                c.accept(new Visitor(), one);
+            }
+            return cus;
+        }catch(Exception e){
+            e.getStackTrace();
+            Assert.fail();
+            return null;
+        }
     }
 
 }
