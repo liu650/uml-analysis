@@ -117,10 +117,26 @@ public class DiagramGenerator extends JPanel {
 
     protected void drawAnnotation(Graphics2D gp2d) {
         int annotation_x_offset = -80; //The value is intentionally Negative
+        int annotation_y_offset = -40;
         Position annotaionBox = new Position(upperLeft.x + x_offset * 3 + annotation_x_offset, 40);
         gp2d.setColor(Color.DARK_GRAY);
         gp2d.drawRect(annotaionBox.x,annotaionBox.y,140,300);
         gp2d.drawString("annotation", annotaionBox.x + 30,annotaionBox.y + 15);
+        Position p11 = new Position(670, 25);
+        Position p12= new Position(950, 25);
+        PositionPair anno1 = new PositionPair(p11,p12);
+        PositionPair anno2 = new PositionPair(new Position(p11.x , p11.y+70), new Position(p12.x, p12.y+70));
+        PositionPair anno3 = new PositionPair(new Position(p11.x , p11.y+150), new Position(p12.x, p12.y+150));
+
+        gp2d.drawString("Inheritance", 870, 95);
+        drawArrow(gp2d, anno1, true);
+        drawLine(gp2d, anno1, false);
+        gp2d.drawString("Realization", 870, 170);
+        drawArrow(gp2d, anno2, false);
+        drawLine(gp2d, anno2, true);
+        gp2d.drawString("Association", 870, 245);
+//        drawArrow(gp2d, anno2, false);
+        drawLine(gp2d, anno3, false);
     }
 
     //1 2 3
