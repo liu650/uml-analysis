@@ -37,13 +37,11 @@ public class DiagramGenerator extends JPanel {
         //7 9 8
         //4 5 6
         for (int i = localPositions.size() - numberOfBox; i < localPositions.size() - 1; i++){
-            drawLineToCenter(gp2d, localPositions, i);
+            // drawLineToCenter(gp2d, localPositions, i);
             drawArrow(gp2d, new PositionPair(localPositions.get(8), localPositions.get(i)),
-                    i%2 == 0 ? true : false, true);
-
+                    i%2 == 0 ? true : false);
+            drawLine(gp2d, new PositionPair(localPositions.get(8), localPositions.get(i)), i%2 == 0 ? true : false);
         }
-
-         drawLine(gp2d, new PositionPair(localPositions.get(0), localPositions.get(1)), true);
 
         // draw all the classes
         for (int i = localPositions.size() - numberOfBox; i < localPositions.size(); i++){
@@ -54,12 +52,11 @@ public class DiagramGenerator extends JPanel {
         drawAnnotation(gp2d);
     }
 
-    protected void drawArrow(Graphics2D gp2d, PositionPair pair, Boolean isSolidArrow, Boolean isDashedLine){
+    protected void drawArrow(Graphics2D gp2d, PositionPair pair, Boolean isSolidArrow){
         Position p1 = pair.getEdgeP1(), p2 = pair.getEdgeP2();
         int xSign = p1.x > p2.x? 1: -1;
         int ySign = p1.y > p2.y? 1: -1;
-        gp2d.setColor(Color.DARK_GRAY);
-        drawLine(gp2d, new PositionPair(p1, p2), isDashedLine);
+        // drawLine(gp2d, new PositionPair(p1, p2), true);
 
         // draw a small triangle at the end of p2
         if (p1.x == p2.x && p1.y == p2.y){
