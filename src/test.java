@@ -8,6 +8,9 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 public class test {
 
     @Test
@@ -17,8 +20,8 @@ public class test {
 //            Scanner scanner = new Scanner(System.in);
 //            System.out.println("Enter the path of your Project (preferably the path to your Model):");
 //            String projectDirectory = scanner.nextLine();
-            Visitor visitor = new Visitor();
-            String tinyVars = "testModel/tinyVars";
+            String pathAST = "testModel/ast";
+            String pathLIBS = "testModel/libs";
 //            System.setIn(new ByteArrayInputStream(projectDirectory.getBytes()));
 //
 //            System.out.println("Path is : " + projectDirectory);
@@ -26,7 +29,7 @@ public class test {
 
             // Establish JavaParser AST root
             ArrayList<File> files = new ArrayList<>();
-            File root = new File(tinyVars);
+            File root = new File(pathAST);
             System.out.println("file children number: " + root.listFiles().length);
 
             SourceRoot sourceRoot = new SourceRoot(Path.of(root.getAbsolutePath()));
@@ -38,7 +41,13 @@ public class test {
             for (CompilationUnit c : cus){
                 MyClass one = new MyClass();
                 c.accept(new Visitor(),one);
+                one.findDependency();
+                one.print();
             }
+            System.out.println("globalClasses   " + MyClass.globalClasses.toString());
+            MyClass.globalDep.forEach((e) -> {
+                System.out.println("\n" + e.toString());
+            });
 //            cus.get(0).accept(new ModifierVisitor<Void>() {
 //                /**
 //                 * For every if-statement, see if it has a comparison using "!=".
@@ -92,6 +101,24 @@ public class test {
         System.out.println(".java".matches("(?i).+\\.java$"));
         System.out.println("java".matches("(?i).+\\.java$"));
         System.out.println("java".matches("(?i).+\\.java$"));
+    }
+    @Test
+    public void testTripletEqual() {
+        assertTrue(new Triplet("a", "b", DependEnum.REALIZATION).equals( new Triplet("a", "b", DependEnum.REALIZATION)));
+        assertTrue(new Triplet("a", "b", DependEnum.REALIZATION).equals( new Triplet("a", "b", DependEnum.valueOf("REALIZATION"))));
+    }
+    @Test
+    public void testTripletAddDuplicates() {
+        ArrayList<Triplet> a = new ArrayList<>();
+        Triplet c = new Triplet("a", "b", DependEnum.REALIZATION);
+        Triplet d = new Triplet("a", "b", DependEnum.REALIZATION);
+        a.add(c);
+        if (!a.contains(d)){
+            a.add(d);
+        }
+        assertTrue(a.contains(d));
+        assertEquals(1,a.size());
+
     }
 
 }

@@ -1,3 +1,3 @@
-public enum dependencyEnum {
+public enum DependEnum {
     ASSOCIATION, IMPORT, INHERITANCE, REALIZATION
 }
