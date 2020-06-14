@@ -24,18 +24,46 @@
       <change afterPath="$PROJECT_DIR$/src/Triplet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/Field.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/Field.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/Method.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/Method.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/MyClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/MyClass.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/Visitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/Visitor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/AUTHOR.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/AUTHOR.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/BI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/BI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/COLOR.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/COLOR.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/CONTENT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/CONTENT.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/IMAGEPATH.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/IMAGEPATH.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/IMAGES.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/IMAGES.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/PAGE.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/PAGE.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/POINT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/POINT.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/PROGRAM.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/PROGRAM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/SECTION.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/SECTION.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/SETTINGS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/SETTINGS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/SIZE.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/SIZE.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/ast/TITLE.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/ast/TITLE.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/dependencyEnum.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/libs/Tokenizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/libs/Tokenizer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/uml-analysis/test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/uml-analysis/test.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Field.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Method.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Method.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Visitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Visitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dependencyEnum.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/AUTHOR.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/AUTHOR.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/BI.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/BI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/COLOR.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/COLOR.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/CONTENT.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/CONTENT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/IMAGEPATH.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/IMAGEPATH.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/IMAGES.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/IMAGES.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/PAGE.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/PAGE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/POINT.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/POINT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/PROGRAM.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/PROGRAM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/SECTION.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/SECTION.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/SETTINGS.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/SETTINGS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/SIZE.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/SIZE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testModel/ast/TITLE.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/ast/TITLE.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testModel/libs/Tokenizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/testModel/libs/Tokenizer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -225,22 +253,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="706" y="374" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1592137800746" />
-    <state width="1877" height="435" key="GridCell.Tab.0.bottom" timestamp="1592138717858">
+    <state width="1877" height="337" key="GridCell.Tab.0.bottom" timestamp="1592139206455">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="435" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1592138717858" />
-    <state width="1877" height="435" key="GridCell.Tab.0.center" timestamp="1592138717858">
+    <state width="1877" height="337" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1592139206455" />
+    <state width="1877" height="337" key="GridCell.Tab.0.center" timestamp="1592139206455">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="435" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1592138717858" />
-    <state width="1877" height="435" key="GridCell.Tab.0.left" timestamp="1592138717858">
+    <state width="1877" height="337" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1592139206455" />
+    <state width="1877" height="337" key="GridCell.Tab.0.left" timestamp="1592139206455">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="435" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1592138717858" />
-    <state width="1877" height="435" key="GridCell.Tab.0.right" timestamp="1592138717858">
+    <state width="1877" height="337" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1592139206455" />
+    <state width="1877" height="337" key="GridCell.Tab.0.right" timestamp="1592139206455">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="435" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1592138717858" />
+    <state width="1877" height="337" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1592139206455" />
     <state x="472" y="114" key="SettingsEditor" timestamp="1592032095567">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
