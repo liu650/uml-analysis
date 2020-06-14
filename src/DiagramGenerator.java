@@ -9,11 +9,12 @@ public class DiagramGenerator extends JPanel {
     private static int arrow_length = 20;
     static Position upperLeft = new Position(30, 30);
 
-    private ArrayList<Position> localPositions = findAllPosition(upperLeft, x_offset, y_offset);
-    public static Position MM= new Position(upperLeft.x + 1 * x_offset, upperLeft.y + 1 * y_offset);
-
     public List<Box> iboxes = new ArrayList<>();
     public List<Arrow> iarrows = new ArrayList<>();
+
+    Stroke solidLine = new BasicStroke( 1.1f,BasicStroke.CAP_ROUND,BasicStroke.JOIN_BEVEL);
+    Stroke dashedLine = new BasicStroke(1.1f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL,
+            0, new float[]{9}, 0);
 
     DiagramGenerator(List<Box> boxes, List<Arrow> arrows){
         this.iboxes = boxes;
@@ -22,12 +23,13 @@ public class DiagramGenerator extends JPanel {
 
     public void paint (Graphics gp) {
         int numberOfBox = 7;
+        ArrayList<Position> localPositions = findAllPosition(upperLeft, x_offset, y_offset);
 
         Box currBox;//keep track of the current box
         //painter--set color before using
-        BasicStroke bs = new BasicStroke( 10.1f,BasicStroke.CAP_ROUND,BasicStroke.JOIN_BEVEL);
         super.paint(gp);
         Graphics2D gp2d = (Graphics2D) gp;
+        gp2d.setStroke(solidLine);
 
         // draw line from all the boxes to center
         // use positionIndex as below
@@ -35,12 +37,13 @@ public class DiagramGenerator extends JPanel {
         //7 9 8
         //4 5 6
         for (int i = localPositions.size() - numberOfBox; i < localPositions.size() - 1; i++){
-             drawLineToCenter(gp2d, localPositions, i);
-            drawArrow(gp2d, new PositionPair(localPositions.get(8), localPositions.get(i)), false);
+            drawLineToCenter(gp2d, localPositions, i);
+            drawArrow(gp2d, new PositionPair(localPositions.get(8), localPositions.get(i)),
+                    i%2 == 0 ? true : false, true);
+
         }
 
-//         drawArrow(gp2d, new PositionPair(localPositions.get(8), new Position(
-//                 localPositions.get(5).x, localPositions.get(5).y + BOX_WIDTH)), false);
+         drawLine(gp2d, new PositionPair(localPositions.get(0), localPositions.get(1)), true);
 
         // draw all the classes
         for (int i = localPositions.size() - numberOfBox; i < localPositions.size(); i++){
@@ -51,13 +54,14 @@ public class DiagramGenerator extends JPanel {
         drawAnnotation(gp2d);
     }
 
-    protected static void drawArrow(Graphics2D gp2d, PositionPair pair, Boolean isSolid){
+    protected void drawArrow(Graphics2D gp2d, PositionPair pair, Boolean isSolidArrow, Boolean isDashedLine){
         Position p1 = pair.getEdgeP1(), p2 = pair.getEdgeP2();
         int xSign = p1.x > p2.x? 1: -1;
         int ySign = p1.y > p2.y? 1: -1;
         gp2d.setColor(Color.DARK_GRAY);
-        gp2d.drawLine(p1.x, p1.y, p2.x, p2.y);
+        drawLine(gp2d, new PositionPair(p1, p2), isDashedLine);
 
+        // draw a small triangle at the end of p2
         if (p1.x == p2.x && p1.y == p2.y){
             //ignore if a position is pointed to itself
         } else if (p1.y == p2.y){
@@ -67,7 +71,7 @@ public class DiagramGenerator extends JPanel {
             int[] yPoints = {p2.y, p2.y - (int)(arrow_length * Math.sin(Math.toRadians(30))),
                     p2.y + (int)(arrow_length * Math.sin(Math.toRadians(30)))};
             gp2d.setColor(Color.DARK_GRAY);
-            if (isSolid){
+            if (isSolidArrow){
                 gp2d.fillPolygon(xPoints, yPoints, 3);
             } else {
                 gp2d.drawPolygon(xPoints, yPoints, 3);
@@ -79,7 +83,7 @@ public class DiagramGenerator extends JPanel {
                     p2.x + xSign * (int)(arrow_length * Math.sin(angle2))};
             int[] yPoints = {p2.y, p2.y + ySign * (int)(arrow_length * Math.cos(angle1)),
                     p2.y - ySign * (int)(arrow_length * Math.cos(angle2))};
-            if (isSolid){
+            if (isSolidArrow){
                 gp2d.fillPolygon(xPoints, yPoints, 3);
             } else {
                 gp2d.drawPolygon(xPoints, yPoints, 3);
@@ -92,14 +96,15 @@ public class DiagramGenerator extends JPanel {
     protected void drawLineToCenter(Graphics2D gp2d, ArrayList<Position> localPositions, int positionIndex){
         Position center = localPositions.get(localPositions.size() - 1);
         Position givenPosition = localPositions.get(positionIndex);
-        drawLine(gp2d, new PositionPair(givenPosition, center));
+        drawLine(gp2d, new PositionPair(givenPosition, center), false);
     }
 
-    protected static void drawLine(Graphics2D gp2d, PositionPair pair){
+    protected void drawLine(Graphics2D gp2d, PositionPair pair, boolean isDashed){
         Position p1 = pair.getEdgeP1(), p2 = pair.getEdgeP2();
         gp2d.setColor(Color.DARK_GRAY);
-        gp2d.drawLine(p1.x + BOX_WIDTH /2, p1.y + BOX_HEIGHT /2,
-                p2.x + BOX_WIDTH /2, p2.y + BOX_HEIGHT /2);
+        gp2d.setStroke(isDashed ? dashedLine : solidLine);
+        gp2d.drawLine(p1.x, p1.y, p2.x, p2.y);
+        gp2d.setStroke(solidLine); // revert any possible change to stroke, to avoid further influence to code
     }
 
     protected void drawClass(Graphics2D gp2d, Position classPosition, String className) {

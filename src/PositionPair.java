@@ -24,7 +24,7 @@ public class PositionPair {
     }
 
     private void calculateEdge(){
-        Position p1Center = new Position(p1.x + 1* width/2, p1.y + 1 * height/2);
+        Position p1Center = new Position(p1.x + 1 * width/2, p1.y + 1 * height/2);
         double minSquareDistance = getSquareDistance(p1, p2);
         Position bestP1 = p1, bestP2 = p2;
         for (Position edge1: getAllEdge(p1)){
@@ -50,6 +50,7 @@ public class PositionPair {
                 res.add(new Position(position.x + xMultiplier * width/2, position.y + yMultiplier * height/2));
             }
         }
+        res.remove(4);
         return res;
     }
 
