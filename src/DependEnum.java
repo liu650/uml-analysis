@@ -1,0 +1,3 @@
+public enum DependEnum {
+    ASSOCIATION, IMPORT, INHERITANCE, REALIZATION
+}

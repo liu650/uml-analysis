@@ -42,4 +42,9 @@ public class Method {
     public void setParameters(String parameters) {
         this.parameters = parameters;
     }
+
+    public String asString(){
+        String n = " ";
+        return getModifier() + n + getReturnType() + n + getName()+"("+getParameters().toString()+ ");";
+    }
 }

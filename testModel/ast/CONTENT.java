@@ -10,7 +10,6 @@ public class CONTENT extends Node {
 
     BI bi = new BI();
 
-    // from list of sentence to single sentence
     String sentence = "";
 
     @Override

@@ -6,7 +6,6 @@ import java.util.List;
 
 public class PAGE extends Node {
 
-    // PAGE::= "NewPage: " PAGETITLE PAGESTUFF*
     PAGETITLE pagetitle;
 
     List<PAGESTUFF> pstf = new ArrayList<>();

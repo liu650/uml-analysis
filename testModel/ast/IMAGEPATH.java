@@ -5,7 +5,6 @@ import java.io.FileNotFoundException;
 
 public class IMAGEPATH extends IMAGEREF {
 
-    // IMAGEPATH::= "Image PATH: " STRING
     String address;
 
     @Override

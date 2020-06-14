@@ -6,7 +6,6 @@ import java.util.Set;
 
 class COLOR extends Node {
 
-    // COLOR:: = "Color: " ("red" or "green" or ...)
     String color;
 
     Set<String> colorSet = new HashSet<>();

@@ -4,23 +4,24 @@ import libs.Node;
 
 public class BI extends Node {
 
-    // BI:: = "bi:" ("Bold" or "Italic")
     boolean bold;
 
     boolean italic;
 
     public static boolean hello;
-    private boolean bad;
-    public final static boolean good = false;
-    protected boolean sad;
-    BI() {
 
+    private boolean bad;
+
+    public final static boolean good = false;
+
+    protected boolean sad;
+
+    BI() {
         this.bold = false;
         this.italic = false;
     }
 
     @Override
-
     public void parse() {
         tokenizer.getAndCheckNext("Bi:");
         // Parse BI

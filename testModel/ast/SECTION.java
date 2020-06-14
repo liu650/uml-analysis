@@ -6,7 +6,6 @@ import libs.Node;
 
 public class SECTION extends Node {
 
-    // SECTION: "Section:" TITLE (PAGE)*
     SECTIONTITLE sectiontitle;
 
     List<PAGE> pages = new ArrayList<PAGE>();

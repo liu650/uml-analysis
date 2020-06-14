@@ -6,14 +6,12 @@ import java.util.List;
 
 public class PROGRAM extends Node {
 
-    // PROGRAM::= TITLE AUTHOR? (SECTION)*
     TITLE title = null;
 
     AUTHOR author = null;
 
     List<SECTION> sections = new ArrayList<>();
 
-    // Fields for evaluation
     String start = "\\documentclass[11pt]{beamer}\n" + "\\usepackage{hyperref}\n" + "\\usepackage{booktabs}\n" + "\\usepackage{xspace}\n" + "\\usepackage{color,xcolor}\n" + "\n" + "\\begin{document}";
 
     String end = "\\end{document}";

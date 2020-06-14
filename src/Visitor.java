@@ -1,37 +1,49 @@
+import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.Modifier;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.javaparser.ast.body.FieldDeclaration;
-import com.github.javaparser.ast.expr.MethodCallExpr;
 import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Visitor extends VoidVisitorAdapter<MyClass> {
 
     @Override
-    public void visit(MethodCallExpr methodCall, MyClass arg){
-        super.visit(methodCall, arg);
+    // ImportList
+    public void visit(CompilationUnit cu, MyClass obj){
+        super.visit(cu, obj);
+        // System.out.println(cu.getImports().toString());
+        obj.setImportList(cu.getImports().stream().map((e)-> {return e.getNameAsString();}).collect(Collectors.toList()));
+//        System.out.println(obj.getImportList());
 
     }
 
     @Override
     public void visit(ClassOrInterfaceDeclaration item, MyClass arg){
         super.visit(item, arg);
-
+        // Implemented, Extended
+        arg.setExtendedList(item.getExtendedTypes().stream().map((e)->{return e.asString();}).collect(Collectors.toList()));
+        arg.setImplementedList(item.getImplementedTypes().stream().map((e)->{return e.asString();}).collect(Collectors.toList()));
         // className
-        System.out.println("getName: " + item.getName());
-        arg.setClassName(item.getNameAsString());
+//        System.out.println("getName: " + item.getName());
+        String classname = item.getNameAsString();
+        arg.setClassName(classname);
+        if(!MyClass.globalClasses.contains(classname)){
+            MyClass.globalClasses.add(classname);
+        }
 
         // classType
-        System.out.println("Modifier: " + handleModifier(item.getModifiers()));
+//        System.out.println("Modifier: " + handleModifier(item.getModifiers()));
         arg.setClassType(handleModifier(item.getModifiers()));
 
 //        System.out.println("getExtendedTypes: " + item.getExtendedTypes().toString());
 //        System.out.println("isInterface: " + item.isInterface());
         if (!item.isInterface()) {
-            System.out.println("getName    "+ item.getName());
+//            System.out.println("getName    "+ item.getName());
             // Fields
             SetFieldsHelper(item, arg);
 
@@ -41,25 +53,14 @@ public class Visitor extends VoidVisitorAdapter<MyClass> {
                 String temReturnType = e.getType().asString();
                 String temName = e.getName().asString();
                 String temParameters = e.getParameters().toString();
-                System.out.println("getType   " + e.getType().asString());
+//                System.out.println("getType   " + e.getType().asString());
 //                System.out.println("getTypeParameters   " + e.getNameAsString()+" "+ e.getTypeParameters().toString());
-                System.out.println("getParameters   " + e.getNameAsString()+" "+ e.getParameters().toString());
+//                System.out.println("getParameters   " + e.getNameAsString()+" "+ e.getParameters().toString());
                 return new Method(temMod,temReturnType,temName,temParameters);
             }).collect(Collectors.toList());
-            System.out.println();
-            System.out.println("methods  " + methods.toString());
+
             arg.setMethods(methods);
 
-            // Import
-//            for(Parameter p : e.getParameters()){
-//                System.out.println(p.getName());
-//                System.out.println(p.getType());
-//            }
-
-
-
-//            arg.setClassName(item.getName().asString());
-//            System.out.println("THIS NAME " + arg.getClassName());
         }
 
         System.out.println();
@@ -70,14 +71,27 @@ public class Visitor extends VoidVisitorAdapter<MyClass> {
         String temType = "";
         String temName = "";
         List<Field> fieldsList = new ArrayList<>();
+        Set<String> depTypeList = new HashSet<>();
         for(FieldDeclaration f : item.getFields()){
             f.setComment(null);
             temMod = handleModifier(f.getModifiers());
             temType = f.getVariable(0).getType().asString();
+//
+//                System.out.println(f.getVariable(0).getType().asString() + "  LIST OF WHAT??:    " + f.getVariable(0).getType().getElementType());
+//            System.out.println("isReferenceType    "+ f.getVariable(0).getType().isReferenceType());
             temName = f.getVariable(0).getName().asString();
             fieldsList.add(new Field(temMod, temType, temName));
+            depTypeList.add(temType);
+
+            f.getVariable(0).getType().ifClassOrInterfaceType(e ->{e.asClassOrInterfaceType().getTypeArguments().ifPresent(
+                    (tas) -> {
+                        tas.forEach(i->depTypeList.add(i.toString()));
+                        });});
+
         }
         arg.setFields(fieldsList);
+
+        arg.setPreAssoList(depTypeList);
     }
 
     public String handleModifier(List<Modifier> lom){

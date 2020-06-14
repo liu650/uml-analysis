@@ -6,7 +6,6 @@ import java.util.List;
 
 public class IMAGES extends PAGESTUFF {
 
-    // IMAGES ::= “Image:” (IMAGEREF)*
     List<IMAGEREF> images = new ArrayList<>();
 
     @Override

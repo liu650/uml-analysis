@@ -5,7 +5,6 @@ import java.util.List;
 
 public class POINT extends PAGESTUFF {
 
-    // POINT::= "BulletPoint: " (CONTENT)*
     List<CONTENT> loc = new ArrayList<>();
 
     @Override

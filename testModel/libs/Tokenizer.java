@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Tokenizer {
@@ -16,7 +15,7 @@ public class Tokenizer {
     private static List<String> literals;
 
     private List<String> tokens = new ArrayList<>();
-
+    private String[] tokens1 = new String[10];
     private int index = 0;
 
     private static Tokenizer theTokenizer;

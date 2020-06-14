@@ -4,7 +4,6 @@ import libs.Node;
 
 public class SIZE extends Node {
 
-    // SIZE::= "Size: " ("LARGE" or "Large" or "large" or "small")
     String size = null;
 
     @Override

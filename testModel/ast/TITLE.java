@@ -4,7 +4,6 @@ import libs.Node;
 
 public class TITLE extends Node {
 
-    // TITLE::="Title= " CONTENT “;”
     CONTENT titleContent = null;
 
     @Override
