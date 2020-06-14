@@ -20,7 +20,7 @@ public class Main {
     }
 
     private static void initialize(){
-        int numberOfBox = 9;
+        final int numberOfBox = 9; // should not be modified
         ArrayList<Position> classPositions = DiagramGenerator.findAllPosition(new Position(250, 170), 200, 210);
 
         //TODO: Box missing  !!!field and !!!method information

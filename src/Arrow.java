@@ -9,7 +9,7 @@ public class Arrow {
             this.color = c;
             this.type = t;
     }
-    public void setPoistion (int x, int y){
+    public void setPosition (int x, int y){
         this.position.x = x;
         this.position.y = y;
     }

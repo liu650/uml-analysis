@@ -6,6 +6,7 @@ import java.util.List;
 public class DiagramGenerator extends JPanel {
     private static int x_offset = 300, y_offset = 260;
     private static int class_width = 200, class_height = 184;
+    private static int arrow_length = 20;
     static Position upperLeft = new Position(30, 30);
 
     private ArrayList<Position> localPositions = findAllPosition(upperLeft, x_offset, y_offset);
@@ -20,7 +21,7 @@ public class DiagramGenerator extends JPanel {
     }
 
     public void paint (Graphics gp) {
-        int numberOfBox = 8;
+        int numberOfBox = 7;
 
         Box currBox;//keep track of the current box
         //painter--set color before using
@@ -44,6 +45,32 @@ public class DiagramGenerator extends JPanel {
         }
 
         drawAnnotation(gp2d);
+        
+        drawInheritanceArrow(gp2d, localPositions.get(8), localPositions.get(0));
+    }
+
+    protected static void drawInheritanceArrow(Graphics2D gp2d, Position p1, Position p2){
+        int xSign = p1.x > p2.x? 1: -1;
+        int ySign = p1.y > p2.y? 1: -1;
+        gp2d.setColor(Color.DARK_GRAY);
+        gp2d.drawLine(p1.x, p1.y, p2.x, p2.y);
+
+        if (p1.y == p2.y){
+            // handle divide by zero
+                int[] xPoints = {p2.x, p2.x + xSign * (int)(arrow_length * Math.cos(Math.toRadians(30))),
+                        p2.x + xSign * (int)(arrow_length * Math.cos(Math.toRadians(30)))};
+                int[] yPoints = {p2.y, p2.y - (int)(arrow_length * Math.sin(Math.toRadians(30))),
+                        p2.y + (int)(arrow_length * Math.sin(Math.toRadians(30)))};
+            gp2d.fillPolygon(xPoints, yPoints, 3);
+        } else {
+            double angle1 = Math.atan(Math.abs(p2.x-p1.x)/Math.abs(p2.y-p1.y)) - Math.toRadians(30);
+            double angle2 = Math.toRadians(120) - angle1;
+            int[] xPoints = {p2.x, p2.x + xSign * (int)(arrow_length * Math.sin(angle1)),
+                    p2.x + xSign * (int)(arrow_length * Math.sin(angle2))};
+            int[] yPoints = {p2.y, p2.y + ySign * (int)(arrow_length * Math.cos(angle1)),
+                    p2.y - ySign * (int)(arrow_length * Math.cos(angle2))};
+            gp2d.drawPolygon(xPoints, yPoints, 3);
+        }
     }
 
     // draw a line from the given index position to center position
