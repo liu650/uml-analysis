@@ -20,8 +20,8 @@ public class test {
 //            Scanner scanner = new Scanner(System.in);
 //            System.out.println("Enter the path of your Project (preferably the path to your Model):");
 //            String projectDirectory = scanner.nextLine();
-            String pathAST = "testModel/ast";
-            String pathLIBS = "testModel/libs";
+            String pathAST = "ast";
+            String pathLIBS = "libs";
 //            System.setIn(new ByteArrayInputStream(projectDirectory.getBytes()));
 //
 //            System.out.println("Path is : " + projectDirectory);

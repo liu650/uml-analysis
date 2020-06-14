@@ -7,8 +7,8 @@ public class MyClass {
 
     public static ArrayList<Triplet> globalDep = new ArrayList<>();
     public static ArrayList<String> globalClasses = new ArrayList<>();
-    private List<Field> fields;
-    private List<Method> methods;
+    private ArrayList<Field> fields;
+    private ArrayList<Method> methods;
     private Set<String> preAssoList = new HashSet<>();
     private List<String> extendedList;
     private List<String> implementedList;
@@ -44,20 +44,22 @@ public class MyClass {
         this.implementedList = implementedList;
     }
 
-    public List<Field> getFields() {
+    public ArrayList<Field> getFields() {
         return fields;
     }
 
     public void setFields(List<Field> fields) {
-        this.fields = fields;
+        this.fields = new ArrayList<>(fields.size());
+        fields.addAll(fields);
     }
 
-    public List<Method> getMethods() {
+    public ArrayList<Method> getMethods() {
         return methods;
     }
 
     public void setMethods(List<Method> methods) {
-        this.methods = methods;
+        this.methods = new ArrayList<>(methods.size());
+        methods.addAll(methods);
     }
 
     public List<String> getImportList() {
@@ -113,7 +115,7 @@ public class MyClass {
         s.append("\nclassName: " + this.className);
         s.append("\nimplementedList: " + this.implementedList.toString());
         s.append("\nextendedList: " + this.extendedList.toString());
-        s.append("\nfields: " + this.fields.stream().map((e)->{return e.asString();}).collect(Collectors.toList()).toString());
+        s.append("\nfields: " + this.fields.stream().map((e)->{return e.toString();}).collect(Collectors.toList()).toString());
         s.append("\nmethods: " + this.methods.stream().map((e)->{return e.asString();}).collect(Collectors.toList()).toString());
         s.append("\n");
         System.out.println(s);;

@@ -36,7 +36,9 @@ public class Field {
     public void setName(String name) {
         this.name = name;
     }
-    public String asString(){
+
+    @Override
+    public String toString(){
         String n = " ";
         return getModifier() + n + getType() + n + getName();
     }
