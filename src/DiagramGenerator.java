@@ -100,9 +100,9 @@ public class DiagramGenerator extends JPanel {
     }
 
     protected void drawClass(Graphics2D gp2d, Position classPosition, MyClass currentClass) {
-        int maxFields = 3;
-        int maxMethods = 3;
-        int lineHeight = 10;
+        int maxFields = 6;
+        int maxMethods = 8;
+        int lineHeight = 11;
 
         gp2d.setColor(Color.DARK_GRAY);
         gp2d.fillRoundRect(classPosition.x, classPosition.y, BOX_WIDTH, BOX_HEIGHT, 20, 20);
@@ -120,7 +120,7 @@ public class DiagramGenerator extends JPanel {
         ArrayList<Method> methods = currentClass.getMethods();
         gp2d.drawLine(classPosition.x, classPosition.y + 90, classPosition.x + 200, classPosition.y + 90);
         for (int i = 0; i < Math.min(maxMethods, methods.size()); i++){
-            gp2d.drawString("method", classPosition.x + 15, classPosition.y + 100 + i * lineHeight);
+            gp2d.drawString(methods.get(i).toString(), classPosition.x + 15, classPosition.y + 100 + i * lineHeight);
         }
     }
 

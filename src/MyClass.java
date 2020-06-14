@@ -50,7 +50,7 @@ public class MyClass {
 
     public void setFields(List<Field> fields) {
         this.fields = new ArrayList<>(fields.size());
-        fields.addAll(fields);
+        this.fields.addAll(fields);
     }
 
     public ArrayList<Method> getMethods() {
@@ -59,7 +59,7 @@ public class MyClass {
 
     public void setMethods(List<Method> methods) {
         this.methods = new ArrayList<>(methods.size());
-        methods.addAll(methods);
+        this.methods.addAll(methods);
     }
 
     public List<String> getImportList() {
@@ -116,7 +116,7 @@ public class MyClass {
         s.append("\nimplementedList: " + this.implementedList.toString());
         s.append("\nextendedList: " + this.extendedList.toString());
         s.append("\nfields: " + this.fields.stream().map((e)->{return e.toString();}).collect(Collectors.toList()).toString());
-        s.append("\nmethods: " + this.methods.stream().map((e)->{return e.asString();}).collect(Collectors.toList()).toString());
+        s.append("\nmethods: " + this.methods.stream().map((e)->{return e.toString();}).collect(Collectors.toList()).toString());
         s.append("\n");
         System.out.println(s);;
     }
