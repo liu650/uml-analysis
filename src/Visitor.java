@@ -56,8 +56,6 @@ public class Visitor extends VoidVisitorAdapter<MyClass> {
 //                System.out.println(p.getType());
 //            }
 
-
-
 //            arg.setClassName(item.getName().asString());
 //            System.out.println("THIS NAME " + arg.getClassName());
         }

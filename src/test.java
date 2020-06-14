@@ -1,6 +1,5 @@
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.utils.SourceRoot;
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.File;
@@ -19,8 +18,7 @@ public class test {
 //            System.out.println("Enter the path of your Project (preferably the path to your Model):");
 //            String projectDirectory = scanner.nextLine();
             Visitor visitor = new Visitor();
-            String pathAST = "testModel/ast";
-            String pathLIBS = "testModel/libs";
+            String tinyVars = "testModel/tinyVars";
 //            System.setIn(new ByteArrayInputStream(projectDirectory.getBytes()));
 //
 //            System.out.println("Path is : " + projectDirectory);
@@ -28,7 +26,7 @@ public class test {
 
             // Establish JavaParser AST root
             ArrayList<File> files = new ArrayList<>();
-            File root = new File(pathLIBS);
+            File root = new File(tinyVars);
             System.out.println("file children number: " + root.listFiles().length);
 
             SourceRoot sourceRoot = new SourceRoot(Path.of(root.getAbsolutePath()));
@@ -95,40 +93,5 @@ public class test {
         System.out.println("java".matches("(?i).+\\.java$"));
         System.out.println("java".matches("(?i).+\\.java$"));
     }
-
-    @Test
-    public void testClassDrawing(){
-        List<CompilationUnit> cus = importClassFromFile();
-    }
-
-    // TODO: the following method uses part of the code from testOr1, which is an incomplete version,
-    //  and should be replaced in final stage.
-    private List<CompilationUnit> importClassFromFile() {
-        String pathAST = "testModel/ast";
-        String pathLIBS = "testModel/libs";
-
-        try {
-            // Establish JavaParser AST root
-            File root = new File(pathLIBS);
-            System.out.println("file children number: " + root.listFiles().length);
-
-            SourceRoot sourceRoot = new SourceRoot(Path.of(root.getAbsolutePath()));
-            System.out.println(sourceRoot.getRoot());
-
-            // parse all java files under the package
-            sourceRoot.tryToParse("");
-            List<CompilationUnit> cus = (ArrayList<CompilationUnit>) sourceRoot.getCompilationUnits();
-            for (CompilationUnit c : cus) {
-                MyClass one = new MyClass();
-                c.accept(new Visitor(), one);
-            }
-            return cus;
-        }catch(Exception e){
-            e.getStackTrace();
-            Assert.fail();
-            return null;
-        }
-    }
-
 
 }
