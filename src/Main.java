@@ -43,9 +43,11 @@ public class Main {
             for (CompilationUnit c : cus) {
                 MyClass one = new MyClass();
                 c.accept(new Visitor(), one);
-                one.findDependency();
                 // one.print();
                 allClasses.add(one);
+            }
+            for (MyClass c:allClasses){
+                c.findDependency();
             }
 
             MyClass.globalDep.forEach((e) -> {
