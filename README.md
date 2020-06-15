@@ -1,19 +1,20 @@
 # java-uml-diagram-generator
-CPSC410 project2
-Analysis Type: Static Analysis
 
----
-
-# Motivation
-To help programmers who get tired of drawing out the class diagram by hand, or people who want to intuitively and quickly visualize details in classes and the relations among them. 
+> Analysis Type: Static Analysis
 
 ---
 
 # Description
 Our project can generate a class diagram automatically from a given Java project to illustrate details in classes and the relations among them intuitively.
 
-INPUT: any folder contains Java code, target class to demostrate its relations (optional)
-OUTPUT: class diagram focusing on a single class
+> INPUT: any folder contains Java code, target class to demostrate its relations (optional)
+
+> OUTPUT: class diagram focusing on a single class
+
+## Motivation
+To help programmers who get tired of drawing out the class diagram by hand, or people who want to intuitively and quickly visualize details in classes and the relations among them. 
+
+---
 
 ## Implementation: 
 => Use a java project as input 
@@ -43,12 +44,14 @@ OUTPUT: class diagram focusing on a single class
 
 ---
 
-## Team and Work Division (In alphabetical order of lastname)
+# Team and Work Division
 
-Jialin Liu: Java Program analysis
-Feiyi Wang: Visualization
-Marta Yao: Integreation & Visualization
-Jialu Zhang: Visualization
-Pengwei Zhou: Video & Users Studies & Testing.
+> In alphabetical order of lastname
 
-Thanks everyone for your contribution!
+- Jialin Liu: Java Program analysis
+- Feiyi Wang: Visualization
+- Marta Yao: Integreation & Visualization
+- Jialu Zhang: Visualization
+- Pengwei Zhou: Video & User Studies & Testing.
+
+> Thanks everyone for your contribution!
