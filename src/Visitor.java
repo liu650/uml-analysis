@@ -65,7 +65,7 @@ public class Visitor extends VoidVisitorAdapter<MyClass> {
 
         }
 
-        System.out.println();
+        // System.out.println();
     }
 
     private void SetFieldsHelper(ClassOrInterfaceDeclaration item, MyClass arg) {

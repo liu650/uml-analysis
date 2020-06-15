@@ -11,12 +11,6 @@ public class Triplet{
         this.type = type;
     }
 
-//        public Triplet(String src, String des, DependEnum type) {
-//            this.src = src;
-//            this.des = des;
-//            this.type = type;
-//        }
-
     public Triplet(String src) {
         this.src = src;
     }

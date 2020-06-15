@@ -1,9 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class DiagramGenerator extends JPanel {
     final static int X_OFFSET = 300, Y_OFFSET = 260;
@@ -21,26 +19,47 @@ public class DiagramGenerator extends JPanel {
         if (userInputClass.equalsIgnoreCase("")){
             this.allClasses = classSelector(givenClasses);
         } else {
-            this.allClasses = classSelectorMethodFromUser(givenClasses,userInputClass);
+            this.allClasses = classSelectorMethodFromUser(givenClasses, userInputClass);
         }
 
     }
 
     private ArrayList<MyClass> classSelectorMethodFromUser(ArrayList<MyClass> givenClasses, String input) {
-        ArrayList<MyClass> res = new ArrayList<>();
-        for(Triplet t: MyClass.globalDep){
-            if (t.getSrc().equalsIgnoreCase(input) && t.getType().equals(DependEnum.ASSOCIATION)){
+        Set<MyClass> res = new HashSet<>();
+
+        for(Triplet t: MyClass.getGlobalDep()){
+            if (t.getSrc().equalsIgnoreCase(input)){
                 for(MyClass c : givenClasses){
-                    if (t.getDes().equalsIgnoreCase( c.getClassName())){
+                    if (t.getDes().equalsIgnoreCase( c.getClassName()) && res.size() < 8){
+                        res.add(c);
+                    }
+                }
+            } else if (t.getDes().equalsIgnoreCase(input)){
+                for(MyClass c : givenClasses){
+                    if (t.getSrc().equalsIgnoreCase( c.getClassName()) && res.size() < 8){
                         res.add(c);
                     }
                 }
             }
         }
-        if (res.size() > 9){
-            res = classSelector(res);
+        // cast back to ArrayList to maintain order.
+        ArrayList<MyClass> newRes = (ArrayList<MyClass>) res.stream().map((e) -> {return e;}).collect(Collectors.toList());
+
+        // add target.
+        MyClass targetClass = find(givenClasses,input);
+        if (targetClass != null){
+            newRes.add(targetClass);
         }
-        return res;
+
+        return newRes;
+    }
+    private MyClass find(ArrayList<MyClass> givenClasses, String str){
+        for(MyClass c : givenClasses){
+            if (str.equalsIgnoreCase( c.getClassName())){
+                return c;
+            }
+        }
+        return null;
     }
 
     // find the class with most relations and set as target, and select classes that has relation with target
@@ -57,10 +76,19 @@ public class DiagramGenerator extends JPanel {
         });
 
         MyClass target = givenClasses.get(0);
+        ArrayList<MyClass> res = selectClassByRelation(givenClasses, target);
+
+        res.add(target);
+
+        return res;
+    }
+
+    private ArrayList<MyClass> selectClassByRelation(ArrayList<MyClass> givenClasses, MyClass target) {
         ArrayList<MyClass> res = new ArrayList<>(), backup = new ArrayList<>();
         int cur = 1;
         while(res.size() < 8 && cur < givenClasses.size()){
-            if (target.hasRelation(givenClasses.get(cur).getClassName())){
+            if (target.hasSrcRelation(givenClasses.get(cur).getClassName())
+                    || target.hasDstRelation(givenClasses.get(cur).getClassName())) {
                 res.add(givenClasses.get(cur++));
             } else {
                 backup.add(givenClasses.get(cur++));
@@ -70,9 +98,6 @@ public class DiagramGenerator extends JPanel {
         while (res.size() < Math.min(givenClasses.size() - 1, 9 - 1) && cur < backup.size()){
             res.add(backup.get(cur++));
         }
-
-        res.add(target);
-
         return res;
     }
 
@@ -93,9 +118,10 @@ public class DiagramGenerator extends JPanel {
 
         // draw all relations for target class, which is always the class in the center
         MyClass target = allClasses.get(Math.min(numberOfBox-1, 8));
-        ArrayList<Relation> relations = generateRelationList(numberOfBox, target);
+        ArrayList<Relation> relationsBoxIndex =
+                relationIndexToBoxIndex(generateRelationList(numberOfBox, target), numberOfBox);
 
-        for (Relation relation: relations){
+        for (Relation relation: relationsBoxIndex){
             drawRelation(gp2d, relation);
         }
 //        testRelations(gp2d, localPositions, numberOfBox);
@@ -110,25 +136,34 @@ public class DiagramGenerator extends JPanel {
         drawLine(gp2d, relation.getPositionPair(), relation.getIsDashed());
     }
 
-    private ArrayList<Relation> generateRelationList(int numberOfBox, MyClass target) {
-        HashMap<DependEnum, ArrayList<String>> rawRelationList = new HashMap<>();
-        rawRelationList.put(DependEnum.REALIZATION, target.getImplementedList());
-        rawRelationList.put(DependEnum.IMPORT, target.getImportList());
-        rawRelationList.put(DependEnum.INHERITANCE, target.getExtendedList());
-        rawRelationList.put(DependEnum.ASSOCIATION, target.getAssociationList());
+    private ArrayList<Relation> relationIndexToBoxIndex(ArrayList<Relation> relationsNaturalIndex, int numberOfBox){
+        ArrayList<Relation> relationsBoxIndex = new ArrayList<>();
+        int diff = 9 - numberOfBox;
+        if (diff <= 0){
+            return relationsNaturalIndex;
+        }
+        for (Relation r: relationsNaturalIndex){
+            relationsBoxIndex.add(new Relation(
+                    r.getClassIndex1() + diff, r.getClassIndex2() + diff, r.getDependEnum()));
+        }
+        return relationsBoxIndex;
+    }
 
+    private ArrayList<Relation> generateRelationList(int numberOfBox, MyClass target) {
         ArrayList<Relation> relationList = new ArrayList<>();
-        for (Map.Entry<DependEnum, ArrayList<String>> entry: rawRelationList.entrySet()){
-            DependEnum enumKey = entry.getKey();
-            for (String className2: entry.getValue()){
-                int c2Index = allClasses.indexOf(new MyClass(className2));
-                if (c2Index >= 0 && c2Index < Math.min(numberOfBox, allClasses.size())){
+        for (Triplet t:target.getGlobalDep()){
+            if (t.getDes().equalsIgnoreCase(target.getClassName())
+                    || t.getSrc().equalsIgnoreCase(target.getClassName())){
+                int srcIndex = allClasses.indexOf(new MyClass(t.getSrc()));
+                int dstIndex = allClasses.indexOf(new MyClass(t.getDes()));
+                if (srcIndex >= 0 && srcIndex < Math.min(numberOfBox, allClasses.size())
+                && dstIndex >= 0 && dstIndex < Math.min(numberOfBox, allClasses.size())){
                     // only consider classes in the range
-                    relationList.add(new Relation(Math.min(numberOfBox, allClasses.size()) - 1,
-                            c2Index, enumKey));
+                    relationList.add(new Relation(srcIndex, dstIndex, t.getType()));
                 }
             }
         }
+
         return relationList;
     }
 
@@ -189,7 +224,6 @@ public class DiagramGenerator extends JPanel {
     protected void drawClass(Graphics2D gp2d, Position classPosition, MyClass currentClass) {
         int maxFields = 6;
         int maxMethods = 8;
-        int lineHeight = 11;
 
         // handle class name
         gp2d.setColor(Color.DARK_GRAY);
@@ -199,23 +233,73 @@ public class DiagramGenerator extends JPanel {
         gp2d.drawLine(classPosition.x, classPosition.y + 20, classPosition.x + 200, classPosition.y + 20);
 
         // handle class fields
-        ArrayList<Field> fields = currentClass.getFields();
-        for (int i = 0; i < Math.min(maxFields, fields.size()); i++){
-            gp2d.drawString(fields.get(i).toUMLString(),
-                    classPosition.x + 15, classPosition.y + 35 + i * lineHeight);
-        }
+        drawClassFields(gp2d, classPosition, maxFields, currentClass, 35);
 
         // handle class methods
+        drawClassMethods(gp2d, classPosition, maxMethods, currentClass, 104);
+    }
+
+    // support split with extra long lines
+    private void drawClassMethods(Graphics2D gp2d, Position classPosition, int maxMethods, MyClass currentClass,
+                                  int startingHeight) {
+        int methodCount = 0, methodIndex = 0;
+        int maxStringLength = currentClass.getMaxStringLength();
+        int lineHeight = currentClass.getLineHeight();
         ArrayList<Method> methods = currentClass.getMethods();
+
         gp2d.drawLine(classPosition.x, classPosition.y + 90, classPosition.x + 200, classPosition.y + 93);
-        for (int i = 0; i < Math.min(maxMethods, methods.size()); i++){
-            gp2d.drawString(methods.get(i).toUMLString(),
-                    classPosition.x + 15, classPosition.y + 104 + i * lineHeight);
+
+        while (methodCount < Math.min(maxMethods, methods.size())){
+            String methodToProcess = methods.get(methodIndex).toUMLString();
+            if (methodToProcess.length() > maxStringLength){
+                //split into multiple lines
+                int numLines = (int) Math.ceil(1.0 * methodToProcess.length() / maxStringLength);
+                for (int i = 0; i<numLines; i++){
+                    if (methodCount < Math.min(maxMethods, methods.size())) {
+                        String curLine = methodToProcess.substring(i * maxStringLength,
+                                Math.min(methodToProcess.length(), (i + 1) * maxStringLength));
+                        gp2d.drawString(curLine,
+                                classPosition.x + 15, classPosition.y + startingHeight + (methodCount++) * lineHeight);
+                    }
+                }
+            } else {
+                gp2d.drawString(methods.get(methodIndex++).toUMLString(),
+                        classPosition.x + 15, classPosition.y + startingHeight + (methodCount++) * lineHeight);
+            }
+        }
+    }
+
+    // support split with extra long lines
+    private void drawClassFields(Graphics2D gp2d, Position classPosition, int maxFields, MyClass currentClass,
+                                 int startingHeight) {
+        int fieldCount = 0, fieldIndex = 0;
+        int maxStringLength = currentClass.getMaxStringLength();
+        int lineHeight = currentClass.getLineHeight();
+        ArrayList<Field> fields = currentClass.getFields();
+
+        while (fieldCount < Math.min(maxFields, fields.size())){
+            String fieldToProcess = fields.get(fieldIndex).toUMLString();
+            if (fieldToProcess.length() > maxStringLength){
+                //split into multiple lines
+                int numLines = (int) Math.ceil(1.0 * fieldToProcess.length() / maxStringLength);
+                for (int i = 0; i<numLines; i++){
+                    if (fieldCount < Math.min(maxFields, fields.size())) {
+                        String curLine = fieldToProcess.substring(i * maxStringLength,
+                                Math.min(fieldToProcess.length(), (i + 1) * maxStringLength));
+                        gp2d.drawString(curLine,
+                                classPosition.x + 15, classPosition.y + startingHeight + (fieldCount++) * lineHeight);
+                    }
+                }
+            } else {
+                gp2d.drawString(fields.get(fieldIndex++).toUMLString(),
+                        classPosition.x + 15, classPosition.y + startingHeight + (fieldCount++) * lineHeight);
+            }
         }
     }
 
     protected void drawAnnotation(Graphics2D gp2d) {
         int annotation_x_offset = -80; //The value is intentionally Negative
+        int nextLine = 15;
         Position annotaionBox = new Position(UPPER_LEFT.x + X_OFFSET * 3 + annotation_x_offset, 40);
         gp2d.setColor(Color.DARK_GRAY);
         gp2d.drawRect(annotaionBox.x,annotaionBox.y,140,350);
@@ -226,7 +310,8 @@ public class DiagramGenerator extends JPanel {
         PositionPair anno1 = new PositionPair(p11,p12);
         PositionPair anno2 = new PositionPair(new Position(p11.x , p11.y+70), new Position(p12.x, p12.y+70));
         PositionPair anno3 = new PositionPair(new Position(p11.x , p11.y+150), new Position(p12.x, p12.y+150));
-        PositionPair anno4 = new PositionPair(new Position(p11.x , p11.y+150 + 80), new Position(p12.x, p12.y+150+80));
+        PositionPair anno4 = new PositionPair(new Position(p11.x , p11.y+150 + 80 + nextLine),
+                new Position(p12.x, p12.y+150+80+nextLine));
 
         gp2d.drawString("Inheritance", 870, 95);
         drawArrow(gp2d, anno1, ArrowEnum.SOLID_TRIANGLE);
@@ -237,7 +322,9 @@ public class DiagramGenerator extends JPanel {
         gp2d.drawString("Import", 870, 95 + 75*2);
         drawArrow(gp2d, anno3, ArrowEnum.DEFAULT);
         drawLine(gp2d, anno3, true);
-        gp2d.drawString("Association", 870, 95 + 75*3);
+        gp2d.drawString("Unidirectional", 870, 95 + 75*3);
+        gp2d.drawString("Association", 870, 95 + 75*3 + nextLine);
+        drawArrow(gp2d, anno4, ArrowEnum.DEFAULT);
         drawLine(gp2d, anno4, false);
 
     }
