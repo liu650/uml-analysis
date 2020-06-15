@@ -5,6 +5,10 @@ import java.util.Set;
 import java.util.stream.Collectors;
 public class MyClass {
 
+    //for drawing fields and methods
+    private int lineHeight = 11;
+    private int maxStringLength = 24;
+
     public static ArrayList<Triplet> globalDep = new ArrayList<>();
     public static ArrayList<String> globalClasses = new ArrayList<>();
     private ArrayList<Field> fields;
@@ -202,5 +206,13 @@ public class MyClass {
             }
         }
         return false;
+    }
+
+    public int getLineHeight() {
+        return lineHeight;
+    }
+
+    public int getMaxStringLength(){
+        return maxStringLength;
     }
 }

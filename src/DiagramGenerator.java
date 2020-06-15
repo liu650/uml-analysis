@@ -224,7 +224,6 @@ public class DiagramGenerator extends JPanel {
     protected void drawClass(Graphics2D gp2d, Position classPosition, MyClass currentClass) {
         int maxFields = 6;
         int maxMethods = 8;
-        int lineHeight = 11;
 
         // handle class name
         gp2d.setColor(Color.DARK_GRAY);
@@ -234,18 +233,67 @@ public class DiagramGenerator extends JPanel {
         gp2d.drawLine(classPosition.x, classPosition.y + 20, classPosition.x + 200, classPosition.y + 20);
 
         // handle class fields
-        ArrayList<Field> fields = currentClass.getFields();
-        for (int i = 0; i < Math.min(maxFields, fields.size()); i++){
-            gp2d.drawString(fields.get(i).toUMLString(),
-                    classPosition.x + 15, classPosition.y + 35 + i * lineHeight);
-        }
+        drawClassFields(gp2d, classPosition, maxFields, currentClass, 35);
 
         // handle class methods
+        drawClassMethods(gp2d, classPosition, maxMethods, currentClass, 104);
+    }
+
+    // support split with extra long lines
+    private void drawClassMethods(Graphics2D gp2d, Position classPosition, int maxMethods, MyClass currentClass,
+                                  int startingHeight) {
+        int methodCount = 0, methodIndex = 0;
+        int maxStringLength = currentClass.getMaxStringLength();
+        int lineHeight = currentClass.getLineHeight();
         ArrayList<Method> methods = currentClass.getMethods();
+
         gp2d.drawLine(classPosition.x, classPosition.y + 90, classPosition.x + 200, classPosition.y + 93);
-        for (int i = 0; i < Math.min(maxMethods, methods.size()); i++){
-            gp2d.drawString(methods.get(i).toUMLString(),
-                    classPosition.x + 15, classPosition.y + 104 + i * lineHeight);
+
+        while (methodCount < Math.min(maxMethods, methods.size())){
+            String methodToProcess = methods.get(methodIndex).toUMLString();
+            if (methodToProcess.length() > maxStringLength){
+                //split into multiple lines
+                int numLines = (int) Math.ceil(1.0 * methodToProcess.length() / maxStringLength);
+                for (int i = 0; i<numLines; i++){
+                    if (methodCount < Math.min(maxMethods, methods.size())) {
+                        String curLine = methodToProcess.substring(i * maxStringLength,
+                                Math.min(methodToProcess.length(), (i + 1) * maxStringLength));
+                        gp2d.drawString(curLine,
+                                classPosition.x + 15, classPosition.y + startingHeight + (methodCount++) * lineHeight);
+                    }
+                }
+            } else {
+                gp2d.drawString(methods.get(methodIndex++).toUMLString(),
+                        classPosition.x + 15, classPosition.y + startingHeight + (methodCount++) * lineHeight);
+            }
+        }
+    }
+
+    // support split with extra long lines
+    private void drawClassFields(Graphics2D gp2d, Position classPosition, int maxFields, MyClass currentClass,
+                                 int startingHeight) {
+        int fieldCount = 0, fieldIndex = 0;
+        int maxStringLength = currentClass.getMaxStringLength();
+        int lineHeight = currentClass.getLineHeight();
+        ArrayList<Field> fields = currentClass.getFields();
+
+        while (fieldCount < Math.min(maxFields, fields.size())){
+            String fieldToProcess = fields.get(fieldIndex).toUMLString();
+            if (fieldToProcess.length() > maxStringLength){
+                //split into multiple lines
+                int numLines = (int) Math.ceil(1.0 * fieldToProcess.length() / maxStringLength);
+                for (int i = 0; i<numLines; i++){
+                    if (fieldCount < Math.min(maxFields, fields.size())) {
+                        String curLine = fieldToProcess.substring(i * maxStringLength,
+                                Math.min(fieldToProcess.length(), (i + 1) * maxStringLength));
+                        gp2d.drawString(curLine,
+                                classPosition.x + 15, classPosition.y + startingHeight + (fieldCount++) * lineHeight);
+                    }
+                }
+            } else {
+                gp2d.drawString(fields.get(fieldIndex++).toUMLString(),
+                        classPosition.x + 15, classPosition.y + startingHeight + (fieldCount++) * lineHeight);
+            }
         }
     }
 
