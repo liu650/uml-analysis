@@ -13,9 +13,13 @@ Our project can generate a class diagram automatically from a given Java project
 To help programmers who get tired of drawing out the class diagram by hand, or people who want to intuitively and quickly visualize details in classes and the relations among them. 
 
 ## Implementation
+
 => Use a java project as input 
+
 => Analyse a user-selected class 
+
 => Collect class information and their relations 
+
 => use the data and JFrame to generate the corresponding diagrams
 
 ## Details
