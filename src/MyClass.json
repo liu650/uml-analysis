@@ -1,4 +1,4 @@
-NodeList:[
+"NodeList":[
   {
     "fields": [{"modifier": "public", "Type": "Int", "Name":"PhoneNumber"}],
     "methods": [{"modifier": "public", "name": "getNumber" ,",parameters": "Int id String person", "returnType": "void" },
@@ -24,6 +24,5 @@ NodeList:[
 
  DependencyList: [[Class1, Class2, "Association"],[Class1, Parent2, "Inheritance"], [Class1, "com.github.junitTest", "Import"]]
 
-// 不用了, 用String来表示
-classEnum  = [CLASS, INTERFACE, ABSTRACTCLASS,]
+classEnum  = [CONCRETE, INTERFACE, ABSTRACT,]
 dependencyEnum = [Association, Import, Inheritance, Realization]

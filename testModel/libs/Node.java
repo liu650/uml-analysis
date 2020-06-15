@@ -1,24 +1,13 @@
 package libs;
 
-import java.io.FileNotFoundException;
+import ast.tinyVarsVisitor;
+
 import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
 
 public abstract class Node {
-
     protected Tokenizer tokenizer = Tokenizer.getTokenizer();
 
-    static protected PrintWriter writer;
+    abstract public void parse();
 
-    public static void setWriter(String name) throws FileNotFoundException, UnsupportedEncodingException {
-        writer = new PrintWriter(name, "UTF-8");
-    }
-
-    public static void closeWriter() {
-        writer.close();
-    }
-
-    abstract public void parse() throws FileNotFoundException;
-
-    abstract public void evaluate();
+    abstract public <T> T accept(tinyVarsVisitor<T> v); // so that we remember to define this in all subclasses
 }

@@ -7,65 +7,86 @@ public class MyClass {
 
     public static ArrayList<Triplet> globalDep = new ArrayList<>();
     public static ArrayList<String> globalClasses = new ArrayList<>();
-    private List<Field> fields;
-    private List<Method> methods;
+    private ArrayList<Field> fields;
+    private ArrayList<Method> methods;
     private Set<String> preAssoList = new HashSet<>();
-    private List<String> extendedList;
-    private List<String> implementedList;
-    private List<String> importList;
+    private ArrayList<String> extendedList;
+    private ArrayList<String> implementedList;
+    private ArrayList<String> importList;
+    private ArrayList<String> associationList;
 
     private String className;
 
     private String classType;
     // TODO
-    private  List<Object> dependencyList;
+    private  ArrayList<Object> dependencyList;
 
+    MyClass(String className){
+        this.className = className;
+    }
 
     MyClass(){
         fields = new ArrayList<>();
         methods = new ArrayList<>();
         importList = new ArrayList<>();
         dependencyList = new ArrayList<>();
+        className = "";
+        associationList = new ArrayList<>();
     }
 
-    public List<String> getExtendedList() {
+    public ArrayList<String> getExtendedList() {
         return extendedList;
     }
 
     public void setExtendedList(List<String> extendedList) {
-        this.extendedList = extendedList;
+        this.extendedList = new ArrayList<>();
+        this.extendedList.addAll(extendedList);
     }
 
-    public List<String> getImplementedList() {
+    public ArrayList<String> getImplementedList() {
         return implementedList;
     }
 
     public void setImplementedList(List<String> implementedList) {
-        this.implementedList = implementedList;
+        this.implementedList = new ArrayList<>();
+        this.implementedList.addAll(implementedList);
     }
 
-    public List<Field> getFields() {
+    public ArrayList<Field> getFields() {
         return fields;
     }
 
     public void setFields(List<Field> fields) {
-        this.fields = fields;
+        this.fields = new ArrayList<>(fields.size());
+        this.fields.addAll(fields);
     }
 
-    public List<Method> getMethods() {
+    public ArrayList<Method> getMethods() {
         return methods;
     }
 
     public void setMethods(List<Method> methods) {
-        this.methods = methods;
+        this.methods = new ArrayList<>(methods.size());
+        this.methods.addAll(methods);
     }
 
-    public List<String> getImportList() {
+    public ArrayList<String> getImportList() {
         return importList;
     }
 
     public void setImportList(List<String> importList) {
-        this.importList = importList;
+        this.importList = new ArrayList<>();
+        this.importList.addAll(importList);
+    }
+
+    public ArrayList<String> getAssociationList() {
+        associationList = new ArrayList<>();
+        for (Triplet triplet: globalDep){
+            if (triplet.getSrc().equals(getClassName()) && triplet.getType().equals(DependEnum.ASSOCIATION)) {
+                associationList.add(triplet.getDes());
+            }
+        }
+        return associationList;
     }
 
     public String getClassName() {
@@ -84,12 +105,13 @@ public class MyClass {
         this.classType = classType;
     }
 
-    public List<Object> getDependencyList() {
+    public ArrayList<Object> getDependencyList() {
         return dependencyList;
     }
 
     public void setDependencyList(List<Object> dependencyList) {
-        this.dependencyList = dependencyList;
+        this.dependencyList = new ArrayList<>();
+        this.dependencyList.addAll(dependencyList);
     }
 
     public Set<String> getPreAssoList() {
@@ -113,8 +135,8 @@ public class MyClass {
         s.append("\nclassName: " + this.className);
         s.append("\nimplementedList: " + this.implementedList.toString());
         s.append("\nextendedList: " + this.extendedList.toString());
-        s.append("\nfields: " + this.fields.stream().map((e)->{return e.asString();}).collect(Collectors.toList()).toString());
-        s.append("\nmethods: " + this.methods.stream().map((e)->{return e.asString();}).collect(Collectors.toList()).toString());
+        s.append("\nfields: " + this.fields.stream().map((e)->{return e.toString();}).collect(Collectors.toList()).toString());
+        s.append("\nmethods: " + this.methods.stream().map((e)->{return e.toString();}).collect(Collectors.toList()).toString());
         s.append("\n");
         System.out.println(s);;
     }
@@ -144,5 +166,28 @@ public class MyClass {
         }
     }
 
+    @Override
+    public boolean equals(Object obj){
+        try {
+            MyClass myClass = (MyClass) obj;
+            return getClassName().equals(myClass.getClassName());
+        }catch(Exception e){
+            return false;
+        }
+    }
 
+
+    public boolean hasRelation(String className) {
+        return (getImplementedList().contains(className) || getImportList().contains(className)
+                || getExtendedList().contains(className) || getPreAssoList().contains(className));
+    }
+    public static String getModifierSymbol(String s) {
+        switch (s.toLowerCase()){
+            case "public": return "+";
+            case "private": return "-";
+            case "protected": return "#";
+            default: return "+";
+
+        }
+    }
 }

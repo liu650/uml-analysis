@@ -26,8 +26,10 @@ public class Visitor extends VoidVisitorAdapter<MyClass> {
     public void visit(ClassOrInterfaceDeclaration item, MyClass arg){
         super.visit(item, arg);
         // Implemented, Extended
-        arg.setExtendedList(item.getExtendedTypes().stream().map((e)->{return e.asString();}).collect(Collectors.toList()));
-        arg.setImplementedList(item.getImplementedTypes().stream().map((e)->{return e.asString();}).collect(Collectors.toList()));
+        arg.setExtendedList(item.getExtendedTypes().stream().map((e)->{return e.asString();})
+                .collect(Collectors.toList()));
+        arg.setImplementedList(item.getImplementedTypes().stream().map((e)->{return e.asString();})
+                .collect(Collectors.toList()));
         // className
 //        System.out.println("getName: " + item.getName());
         String classname = item.getNameAsString();
@@ -52,7 +54,7 @@ public class Visitor extends VoidVisitorAdapter<MyClass> {
                 String temMod = handleModifier(e.getModifiers());
                 String temReturnType = e.getType().asString();
                 String temName = e.getName().asString();
-                String temParameters = e.getParameters().toString();
+                String temParameters = e.getParameters().isEmpty()? "" : e.getParameters().toString();
 //                System.out.println("getType   " + e.getType().asString());
 //                System.out.println("getTypeParameters   " + e.getNameAsString()+" "+ e.getTypeParameters().toString());
 //                System.out.println("getParameters   " + e.getNameAsString()+" "+ e.getParameters().toString());
@@ -83,7 +85,8 @@ public class Visitor extends VoidVisitorAdapter<MyClass> {
             fieldsList.add(new Field(temMod, temType, temName));
             depTypeList.add(temType);
 
-            f.getVariable(0).getType().ifClassOrInterfaceType(e ->{e.asClassOrInterfaceType().getTypeArguments().ifPresent(
+            f.getVariable(0).getType().ifClassOrInterfaceType(e ->{e.asClassOrInterfaceType()
+                    .getTypeArguments().ifPresent(
                     (tas) -> {
                         tas.forEach(i->depTypeList.add(i.toString()));
                         });});
