@@ -138,7 +138,7 @@ public class DiagramGenerator extends JPanel {
 
     private ArrayList<Relation> relationIndexToBoxIndex(ArrayList<Relation> relationsNaturalIndex, int numberOfBox){
         ArrayList<Relation> relationsBoxIndex = new ArrayList<>();
-        int diff = numberOfBox - relationsBoxIndex.size() - 1;
+        int diff = 9 - numberOfBox;
         if (diff <= 0){
             return relationsNaturalIndex;
         }
@@ -251,6 +251,7 @@ public class DiagramGenerator extends JPanel {
 
     protected void drawAnnotation(Graphics2D gp2d) {
         int annotation_x_offset = -80; //The value is intentionally Negative
+        int nextLine = 15;
         Position annotaionBox = new Position(UPPER_LEFT.x + X_OFFSET * 3 + annotation_x_offset, 40);
         gp2d.setColor(Color.DARK_GRAY);
         gp2d.drawRect(annotaionBox.x,annotaionBox.y,140,350);
@@ -261,7 +262,8 @@ public class DiagramGenerator extends JPanel {
         PositionPair anno1 = new PositionPair(p11,p12);
         PositionPair anno2 = new PositionPair(new Position(p11.x , p11.y+70), new Position(p12.x, p12.y+70));
         PositionPair anno3 = new PositionPair(new Position(p11.x , p11.y+150), new Position(p12.x, p12.y+150));
-        PositionPair anno4 = new PositionPair(new Position(p11.x , p11.y+150 + 80), new Position(p12.x, p12.y+150+80));
+        PositionPair anno4 = new PositionPair(new Position(p11.x , p11.y+150 + 80 + nextLine),
+                new Position(p12.x, p12.y+150+80+nextLine));
 
         gp2d.drawString("Inheritance", 870, 95);
         drawArrow(gp2d, anno1, ArrowEnum.SOLID_TRIANGLE);
@@ -272,7 +274,9 @@ public class DiagramGenerator extends JPanel {
         gp2d.drawString("Import", 870, 95 + 75*2);
         drawArrow(gp2d, anno3, ArrowEnum.DEFAULT);
         drawLine(gp2d, anno3, true);
-        gp2d.drawString("Association", 870, 95 + 75*3);
+        gp2d.drawString("Unidirectional", 870, 95 + 75*3);
+        gp2d.drawString("Association", 870, 95 + 75*3 + nextLine);
+        drawArrow(gp2d, anno4, ArrowEnum.DEFAULT);
         drawLine(gp2d, anno4, false);
 
     }

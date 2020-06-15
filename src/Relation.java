@@ -15,7 +15,6 @@ public class Relation {
         this.classIndex1 = classIndex1;
         this.classIndex2 = classIndex2;
         this.dependEnum = dependEnum;
-        calculatePositionPair();
         setArrowType();
     }
 
@@ -30,7 +29,7 @@ public class Relation {
             arrowType = ArrowEnum.DEFAULT;
             isDashed = true;
         } else{ // association
-            arrowType = ArrowEnum.NULL;
+            arrowType = ArrowEnum.DEFAULT;
             isDashed = false;
         }
     }
@@ -40,6 +39,7 @@ public class Relation {
     }
 
     public PositionPair getPositionPair() {
+        calculatePositionPair();
         return positionPair;
     }
 

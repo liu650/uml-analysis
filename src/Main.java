@@ -76,7 +76,7 @@ public class Main {
             // Draw diagram on Canvas using JFrame
             initialize(allClasses, target);
             if (System.getProperty("os.name").contains("Mac")) {
-                cleanUpJavaCache();
+                // cleanUpJavaCache();
             }
 
         } catch (Exception e) {
@@ -110,7 +110,7 @@ public class Main {
 
     // This method will only used for Mac OS.
     private static void cleanUpJavaCache() throws IOException {
-        String[] productionPath =  {"./out/production", "./output"};
+        String[] productionPath =  {"./out/production"};
         Boolean isSuccess = true;
         for (String filePath: productionPath){
             if (new File(filePath).exists()) {
