@@ -28,7 +28,7 @@ To help programmers who get tired of drawing out the class diagram by hand, or p
  - Class fields and methods longer than the given area will be hidden.
  
 ## Sample outout
-[TBD]
+![SampleOutput](testModel/sampleOutput.png)
 
 ---
 
