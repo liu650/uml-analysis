@@ -19,24 +19,30 @@ public class DiagramGenerator extends JPanel {
         if (userInputClass.equalsIgnoreCase("")){
             this.allClasses = classSelector(givenClasses);
         } else {
-            this.allClasses = classSelectorMethodFromUser(givenClasses,userInputClass);
+            this.allClasses = classSelectorMethodFromUser(givenClasses, userInputClass);
         }
 
     }
 
     private ArrayList<MyClass> classSelectorMethodFromUser(ArrayList<MyClass> givenClasses, String input) {
-        // USE SET TO AVOID DUPLICATES
         Set<MyClass> res = new HashSet<>();
 
         for(Triplet t: MyClass.globalDep){
-            if (t.getSrc().equalsIgnoreCase(input) ){
+
+            // TODO: just for testing
+            if (t.getSrc().equalsIgnoreCase("Tokenizer") || t.getDes().equalsIgnoreCase("Tokenizer")){
+                if (t.getSrc().equalsIgnoreCase("node") || t.getDes().equalsIgnoreCase("node")) {
+                    t.getType();
+                }
+            }
+
+            if (t.getSrc().equalsIgnoreCase(input)){
                 for(MyClass c : givenClasses){
                     if (t.getDes().equalsIgnoreCase( c.getClassName()) && res.size() < 8){
                         res.add(c);
                     }
                 }
-            }
-            if (t.getDes().equalsIgnoreCase(input) ){
+            } else if (t.getDes().equalsIgnoreCase(input)){
                 for(MyClass c : givenClasses){
                     if (t.getSrc().equalsIgnoreCase( c.getClassName()) && res.size() < 8){
                         res.add(c);
@@ -78,10 +84,19 @@ public class DiagramGenerator extends JPanel {
         });
 
         MyClass target = givenClasses.get(0);
+        ArrayList<MyClass> res = selectClassByRelation(givenClasses, target);
+
+        res.add(target);
+
+        return res;
+    }
+
+    private ArrayList<MyClass> selectClassByRelation(ArrayList<MyClass> givenClasses, MyClass target) {
         ArrayList<MyClass> res = new ArrayList<>(), backup = new ArrayList<>();
         int cur = 1;
         while(res.size() < 8 && cur < givenClasses.size()){
-            if (target.hasRelation(givenClasses.get(cur).getClassName())){
+            if (target.hasSrcRelation(givenClasses.get(cur).getClassName())
+                    || target.hasDstRelation(givenClasses.get(cur).getClassName())) {
                 res.add(givenClasses.get(cur++));
             } else {
                 backup.add(givenClasses.get(cur++));
@@ -91,9 +106,6 @@ public class DiagramGenerator extends JPanel {
         while (res.size() < Math.min(givenClasses.size() - 1, 9 - 1) && cur < backup.size()){
             res.add(backup.get(cur++));
         }
-
-        res.add(target);
-
         return res;
     }
 

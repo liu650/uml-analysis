@@ -24,7 +24,7 @@ public class Main {
 
             //TODO: just for testing
             if (projectDirectory.equals("  ")){
-                projectDirectory = "testModel/tinyVars";
+                projectDirectory = "testModel/ast";
             }
 
             System.out.println("Path is : " + projectDirectory);
@@ -39,12 +39,12 @@ public class Main {
 
             // Extract Info
             List<CompilationUnit> cus = (ArrayList<CompilationUnit>) sourceRoot.getCompilationUnits();
-            System.out.println("Number of java files: " + sourceRoot.getCompilationUnits().size());
+            System.out.println("Number of java files found: " + sourceRoot.getCompilationUnits().size());
             for (CompilationUnit c : cus) {
                 MyClass one = new MyClass();
                 c.accept(new Visitor(), one);
                 one.findDependency();
-                one.print();
+                // one.print();
                 allClasses.add(one);
             }
 
@@ -71,9 +71,11 @@ public class Main {
                 }
 
 
-            // Drawasses on Canvas using JFrame
+            // Draw diagram on Canvas using JFrame
             initialize(allClasses, target);
-            cleanUpJavaCache();
+            if (System.getProperty("os.name").contains("Mac")) {
+                cleanUpJavaCache();
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -98,17 +100,24 @@ public class Main {
         jFrame.setSize(1000, 770);// set size of window
         jFrame.setBackground(Color.WHITE);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//set open-close model
-        jFrame.setContentPane(new DiagramGenerator(allClasses,target));// set content
+        jFrame.setContentPane(new DiagramGenerator(allClasses, target));// set content
         jFrame.setTitle("UML Graph");//set title
         jFrame.setVisible(true);// framework is visible
         jFrame.setLocationRelativeTo(null);// the window at middle of the screen
     }
 
-
+    // This method will only used for Mac OS.
     private static void cleanUpJavaCache() throws IOException {
-        String productionPath =  "./out/production";
-        if (new File(productionPath).exists()) {
-            Runtime.getRuntime().exec("rm -r " + productionPath);
+        String[] productionPath =  {"./out/production", "./output"};
+        Boolean isSuccess = true;
+        for (String filePath: productionPath){
+            if (new File(filePath).exists()) {
+                Runtime.getRuntime().exec("rm -r " + productionPath);
+            } else {
+                isSuccess = false;
+            }
+        }
+        if (isSuccess){
             System.out.println("Java cache is removed successfully.");
         }
     }

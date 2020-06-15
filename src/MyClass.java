@@ -82,7 +82,7 @@ public class MyClass {
     public ArrayList<String> getAssociationList() {
         associationList = new ArrayList<>();
         for (Triplet triplet: globalDep){
-            if (triplet.getSrc().equals(getClassName()) && triplet.getType().equals(DependEnum.ASSOCIATION)) {
+            if (triplet.getSrc().equalsIgnoreCase(getClassName()) && triplet.getType().equals(DependEnum.ASSOCIATION)) {
                 associationList.add(triplet.getDes());
             }
         }
@@ -138,7 +138,7 @@ public class MyClass {
         s.append("\nfields: " + this.fields.stream().map((e)->{return e.toString();}).collect(Collectors.toList()).toString());
         s.append("\nmethods: " + this.methods.stream().map((e)->{return e.toString();}).collect(Collectors.toList()).toString());
         s.append("\n");
-        System.out.println(s);;
+        System.out.println(s);
     }
     public void findDependency(){
         // mark fields as Association [Do in visitor]
@@ -170,24 +170,33 @@ public class MyClass {
     public boolean equals(Object obj){
         try {
             MyClass myClass = (MyClass) obj;
-            return getClassName().equals(myClass.getClassName());
+            return getClassName().equalsIgnoreCase(myClass.getClassName());
         }catch(Exception e){
             return false;
         }
     }
 
-
-    public boolean hasRelation(String className) {
-        return (getImplementedList().contains(className) || getImportList().contains(className)
-                || getExtendedList().contains(className) || getPreAssoList().contains(className));
-    }
     public static String getModifierSymbol(String s) {
         switch (s.toLowerCase()){
-            case "public": return "+";
             case "private": return "-";
             case "protected": return "#";
+            case "public":
             default: return "+";
 
         }
+    }
+
+    public boolean hasSrcRelation(String className) {
+        return (getImplementedList().contains(className) || getImportList().contains(className)
+                || getExtendedList().contains(className) || getAssociationList().contains(className));
+    }
+
+    public boolean hasDstRelation(String className) {
+        for (Triplet t: globalDep){
+            if (t.getDes().equalsIgnoreCase(getClassName()) && t.getDes().equalsIgnoreCase(className)){
+                return true;
+            }
+        }
+        return false;
     }
 }
