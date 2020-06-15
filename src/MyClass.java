@@ -10,38 +10,44 @@ public class MyClass {
     private ArrayList<Field> fields;
     private ArrayList<Method> methods;
     private Set<String> preAssoList = new HashSet<>();
-    private List<String> extendedList;
-    private List<String> implementedList;
-    private List<String> importList;
+    private ArrayList<String> extendedList;
+    private ArrayList<String> implementedList;
+    private ArrayList<String> importList;
 
     private String className;
 
     private String classType;
     // TODO
-    private  List<Object> dependencyList;
+    private  ArrayList<Object> dependencyList;
 
+    MyClass(String className){
+        this.className = className;
+    }
 
     MyClass(){
         fields = new ArrayList<>();
         methods = new ArrayList<>();
         importList = new ArrayList<>();
         dependencyList = new ArrayList<>();
+        className = "";
     }
 
-    public List<String> getExtendedList() {
+    public ArrayList<String> getExtendedList() {
         return extendedList;
     }
 
     public void setExtendedList(List<String> extendedList) {
-        this.extendedList = extendedList;
+        this.extendedList = new ArrayList<>();
+        this.extendedList.addAll(extendedList);
     }
 
-    public List<String> getImplementedList() {
+    public ArrayList<String> getImplementedList() {
         return implementedList;
     }
 
     public void setImplementedList(List<String> implementedList) {
-        this.implementedList = implementedList;
+        this.implementedList = new ArrayList<>();
+        this.implementedList.addAll(implementedList);
     }
 
     public ArrayList<Field> getFields() {
@@ -62,12 +68,13 @@ public class MyClass {
         this.methods.addAll(methods);
     }
 
-    public List<String> getImportList() {
+    public ArrayList<String> getImportList() {
         return importList;
     }
 
     public void setImportList(List<String> importList) {
-        this.importList = importList;
+        this.importList = new ArrayList<>();
+        this.importList.addAll(importList);
     }
 
     public String getClassName() {
@@ -86,12 +93,13 @@ public class MyClass {
         this.classType = classType;
     }
 
-    public List<Object> getDependencyList() {
+    public ArrayList<Object> getDependencyList() {
         return dependencyList;
     }
 
     public void setDependencyList(List<Object> dependencyList) {
-        this.dependencyList = dependencyList;
+        this.dependencyList = new ArrayList<>();
+        this.dependencyList.addAll(dependencyList);
     }
 
     public Set<String> getPreAssoList() {
@@ -146,5 +154,19 @@ public class MyClass {
         }
     }
 
+    @Override
+    public boolean equals(Object obj){
+        try {
+            MyClass myClass = (MyClass) obj;
+            return getClassName().equals(myClass.getClassName());
+        }catch(Exception e){
+            return false;
+        }
+    }
 
+
+    public boolean hasRelation(String className) {
+        return (getImplementedList().contains(className) || getImportList().contains(className)
+                || getExtendedList().contains(className) || getPreAssoList().contains(className));
+    }
 }

@@ -19,8 +19,14 @@ public class Main {
             // Get project directory from user
             Scanner scanner = new Scanner(System.in);
             System.out.println("Enter the path of your Project (preferably the path to your Model):");
-            System.out.println("try this: testModel/ast, testModel/libs... ");
+            System.out.println("try this: testModel/tinyVars ... ");
             String projectDirectory = scanner.nextLine();
+
+            //TODO: just for testing
+            if (projectDirectory.equals("  ")){
+                projectDirectory = "testModel/tinyVars";
+            }
+
             System.out.println("Path is : " + projectDirectory);
 
             // Establish JavaParser AST root
@@ -68,7 +74,7 @@ public class Main {
         jFrame.setBackground(Color.WHITE);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//set open-close model
         jFrame.setContentPane(new DiagramGenerator(allClasses));// set content
-        jFrame.setTitle("Sample Graph");//set title
+        jFrame.setTitle("UML Graph");//set title
         jFrame.setVisible(true);// framework is visible
         jFrame.setLocationRelativeTo(null);// the window at middle of the screen
     }
