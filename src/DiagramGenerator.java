@@ -1,9 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class DiagramGenerator extends JPanel {
     final static int X_OFFSET = 300, Y_OFFSET = 260;
@@ -27,20 +25,43 @@ public class DiagramGenerator extends JPanel {
     }
 
     private ArrayList<MyClass> classSelectorMethodFromUser(ArrayList<MyClass> givenClasses, String input) {
-        ArrayList<MyClass> res = new ArrayList<>();
+        // USE SET TO AVOID DUPLICATES
+        Set<MyClass> res = new HashSet<>();
+
         for(Triplet t: MyClass.globalDep){
-            if (t.getSrc().equalsIgnoreCase(input) && t.getType().equals(DependEnum.ASSOCIATION)){
+            if (t.getSrc().equalsIgnoreCase(input) ){
                 for(MyClass c : givenClasses){
-                    if (t.getDes().equalsIgnoreCase( c.getClassName())){
+                    if (t.getDes().equalsIgnoreCase( c.getClassName()) && res.size() < 8){
+                        res.add(c);
+                    }
+                }
+            }
+            if (t.getDes().equalsIgnoreCase(input) ){
+                for(MyClass c : givenClasses){
+                    if (t.getSrc().equalsIgnoreCase( c.getClassName()) && res.size() < 8){
                         res.add(c);
                     }
                 }
             }
         }
-        if (res.size() > 9){
-            res = classSelector(res);
+        // cast back to ArrayList to maintain order.
+        ArrayList<MyClass> newRes = (ArrayList<MyClass>) res.stream().map((e) -> {return e;}).collect(Collectors.toList());
+
+        // add target.
+        MyClass targetClass = find(givenClasses,input);
+        if (targetClass != null){
+            newRes.add(targetClass);
         }
-        return res;
+
+        return newRes;
+    }
+    private MyClass find(ArrayList<MyClass> givenClasses, String str){
+        for(MyClass c : givenClasses){
+            if (str.equalsIgnoreCase( c.getClassName())){
+                return c;
+            }
+        }
+        return null;
     }
 
     // find the class with most relations and set as target, and select classes that has relation with target
