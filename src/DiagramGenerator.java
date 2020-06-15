@@ -17,8 +17,30 @@ public class DiagramGenerator extends JPanel {
     Stroke dashedLine = new BasicStroke(1.1f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL,
             0, new float[]{9}, 0);
 
-    DiagramGenerator(ArrayList<MyClass> givenClasses){
-        this.allClasses = classSelector(givenClasses);
+    DiagramGenerator(ArrayList<MyClass> givenClasses, String userInputClass){
+        if (userInputClass.equalsIgnoreCase("")){
+            this.allClasses = classSelector(givenClasses);
+        } else {
+            this.allClasses = classSelectorMethodFromUser(givenClasses,userInputClass);
+        }
+
+    }
+
+    private ArrayList<MyClass> classSelectorMethodFromUser(ArrayList<MyClass> givenClasses, String input) {
+        ArrayList<MyClass> res = new ArrayList<>();
+        for(Triplet t: MyClass.globalDep){
+            if (t.getSrc().equalsIgnoreCase(input) && t.getType().equals(DependEnum.ASSOCIATION)){
+                for(MyClass c : givenClasses){
+                    if (t.getDes().equalsIgnoreCase( c.getClassName())){
+                        res.add(c);
+                    }
+                }
+            }
+        }
+        if (res.size() > 9){
+            res = classSelector(res);
+        }
+        return res;
     }
 
     // find the class with most relations and set as target, and select classes that has relation with target
@@ -179,7 +201,7 @@ public class DiagramGenerator extends JPanel {
         // handle class fields
         ArrayList<Field> fields = currentClass.getFields();
         for (int i = 0; i < Math.min(maxFields, fields.size()); i++){
-            gp2d.drawString(fields.get(i).toString(),
+            gp2d.drawString(fields.get(i).toUMLString(),
                     classPosition.x + 15, classPosition.y + 35 + i * lineHeight);
         }
 
@@ -187,7 +209,7 @@ public class DiagramGenerator extends JPanel {
         ArrayList<Method> methods = currentClass.getMethods();
         gp2d.drawLine(classPosition.x, classPosition.y + 90, classPosition.x + 200, classPosition.y + 93);
         for (int i = 0; i < Math.min(maxMethods, methods.size()); i++){
-            gp2d.drawString(methods.get(i).toString(),
+            gp2d.drawString(methods.get(i).toUMLString(),
                     classPosition.x + 15, classPosition.y + 104 + i * lineHeight);
         }
     }

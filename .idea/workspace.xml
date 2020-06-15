@@ -22,7 +22,10 @@
     <list default="true" id="0f33faa9-ec4a-4d58-80c5-9c1b79586f93" name="Default Changelist" comment="find bug: cannot paint dashed arrow">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DiagramGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiagramGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Field.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Method.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Method.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyClass.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +75,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="extract.method.default.visibility" value="private" />
+    <property name="extract.method.default.visibility" value="public" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -89,12 +92,13 @@
     <key name="MoveMembersDialog.RECENTS_KEY">
       <recent name="DiagramGenerator" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\liu44\IdeaProjects\uml-analysis" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -220,10 +224,10 @@
     </state>
     <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592037961147" />
     <state x="209" y="124" key="#com.intellij.execution.impl.EditConfigurationsDialog/64.23.1216.777/-293.-1057.1920.1057@64.23.1216.777" timestamp="1592076293079" />
-    <state x="673" y="270" key="#com.intellij.ide.util.MemberChooser" timestamp="1592041363581">
+    <state x="673" y="270" key="#com.intellij.ide.util.MemberChooser" timestamp="1592187846081">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="673" y="270" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1592041363581" />
+    <state x="673" y="270" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1592187846081" />
     <state x="529" y="376" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1592024917503">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -245,31 +249,31 @@
     </state>
     <state x="117" y="23" key="CommitChangelistDialog2/64.23.1216.777/-293.-1057.1920.1057@64.23.1216.777" timestamp="1592140700001" />
     <state x="117" y="23" key="CommitChangelistDialog2/64.23.1216.777@64.23.1216.777" timestamp="1592150683288" />
-    <state width="1174" height="39" key="GridCell.Tab.0.bottom" timestamp="1592151617635">
-      <screen x="64" y="23" width="1216" height="777" />
+    <state width="1877" height="312" key="GridCell.Tab.0.bottom" timestamp="1592193341768">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="283" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1592054150046" />
+    <state width="1877" height="312" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1592193341768" />
     <state width="1174" height="180" key="GridCell.Tab.0.bottom/61.23.1219.777/-293.-1057.1920.1057@61.23.1219.777" timestamp="1592137969662" />
     <state width="1174" height="39" key="GridCell.Tab.0.bottom/64.23.1216.777/-293.-1057.1920.1057@64.23.1216.777" timestamp="1592151617635" />
     <state width="1174" height="171" key="GridCell.Tab.0.bottom/64.23.1216.777@64.23.1216.777" timestamp="1592151267611" />
-    <state width="1174" height="39" key="GridCell.Tab.0.center" timestamp="1592151617633">
-      <screen x="64" y="23" width="1216" height="777" />
+    <state width="1877" height="312" key="GridCell.Tab.0.center" timestamp="1592193341768">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="283" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1592054150045" />
+    <state width="1877" height="312" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1592193341768" />
     <state width="1174" height="180" key="GridCell.Tab.0.center/61.23.1219.777/-293.-1057.1920.1057@61.23.1219.777" timestamp="1592137969660" />
     <state width="1174" height="39" key="GridCell.Tab.0.center/64.23.1216.777/-293.-1057.1920.1057@64.23.1216.777" timestamp="1592151617633" />
     <state width="1174" height="171" key="GridCell.Tab.0.center/64.23.1216.777@64.23.1216.777" timestamp="1592151267609" />
-    <state width="1174" height="39" key="GridCell.Tab.0.left" timestamp="1592151617632">
-      <screen x="64" y="23" width="1216" height="777" />
+    <state width="1877" height="312" key="GridCell.Tab.0.left" timestamp="1592193341768">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="283" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1592054150045" />
+    <state width="1877" height="312" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1592193341768" />
     <state width="1174" height="180" key="GridCell.Tab.0.left/61.23.1219.777/-293.-1057.1920.1057@61.23.1219.777" timestamp="1592137969659" />
     <state width="1174" height="39" key="GridCell.Tab.0.left/64.23.1216.777/-293.-1057.1920.1057@64.23.1216.777" timestamp="1592151617632" />
     <state width="1174" height="171" key="GridCell.Tab.0.left/64.23.1216.777@64.23.1216.777" timestamp="1592151267609" />
-    <state width="1174" height="39" key="GridCell.Tab.0.right" timestamp="1592151617634">
-      <screen x="64" y="23" width="1216" height="777" />
+    <state width="1877" height="312" key="GridCell.Tab.0.right" timestamp="1592193341768">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="283" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1592054150045" />
+    <state width="1877" height="312" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1592193341768" />
     <state width="1174" height="180" key="GridCell.Tab.0.right/61.23.1219.777/-293.-1057.1920.1057@61.23.1219.777" timestamp="1592137969661" />
     <state width="1174" height="39" key="GridCell.Tab.0.right/64.23.1216.777/-293.-1057.1920.1057@64.23.1216.777" timestamp="1592151617634" />
     <state width="1174" height="171" key="GridCell.Tab.0.right/64.23.1216.777@64.23.1216.777" timestamp="1592151267610" />
@@ -316,15 +320,23 @@
     </state>
     <state x="696" y="431" width="591" height="231" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1040@0.0.1920.1040" timestamp="1592038002093" />
     <state x="505" y="345" width="478" height="215" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/64.23.1216.777/-293.-1057.1920.1057@64.23.1216.777" timestamp="1592074526224" />
-    <state x="501" y="233" key="extract.method.dialog" timestamp="1592126642226">
-      <screen x="64" y="23" width="1216" height="777" />
+    <state x="690" y="281" key="extract.method.dialog" timestamp="1592192471039">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="281" key="extract.method.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592042759817" />
+    <state x="690" y="281" key="extract.method.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592192471039" />
     <state x="501" y="233" key="extract.method.dialog/64.23.1216.777/-293.-1057.1920.1057@64.23.1216.777" timestamp="1592126642226" />
     <state x="373" y="166" width="598" height="548" key="find.popup" timestamp="1592140482146">
       <screen x="64" y="23" width="1216" height="777" />
     </state>
     <state x="373" y="166" width="598" height="548" key="find.popup/64.23.1216.777/-293.-1057.1920.1057@64.23.1216.777" timestamp="1592140482146" />
+    <state x="666" y="267" key="refactoring.ChangeSignatureDialog" timestamp="1592190076399">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="666" y="267" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592190076399" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1592186435462">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1592186435462" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -341,18 +353,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/DiagramGenerator.java</url>
-          <line>100</line>
+          <line>122</line>
           <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/DiagramGenerator.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/DiagramGenerator.java</url>
-          <line>58</line>
-          <option name="timeStamp" value="36" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

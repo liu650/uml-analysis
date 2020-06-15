@@ -48,4 +48,13 @@ public class Method {
         String n = " ";
         return getModifier() + n + getReturnType() + n + getName()+"("+getParameters().toString()+ ");";
     }
+    public String toUMLString(){
+        String n = " ";
+        String modifSymbol = MyClass.getModifierSymbol(getModifier());
+
+
+        return modifSymbol + n + getName()+"("+getParameters().toString()+ ")：" + n + getReturnType();
+    }
+
+
 }

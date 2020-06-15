@@ -42,4 +42,10 @@ public class Field {
         String n = " ";
         return getModifier() + n + getType() + n + getName();
     }
+
+    public String toUMLString() {
+        String n = " ";
+        String modifSymbol = MyClass.getModifierSymbol(getModifier());
+        return modifSymbol + n + getName() + ": " + getType();
+    }
 }

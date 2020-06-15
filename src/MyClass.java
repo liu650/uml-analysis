@@ -181,4 +181,13 @@ public class MyClass {
         return (getImplementedList().contains(className) || getImportList().contains(className)
                 || getExtendedList().contains(className) || getPreAssoList().contains(className));
     }
+    public static String getModifierSymbol(String s) {
+        switch (s.toLowerCase()){
+            case "public": return "+";
+            case "private": return "-";
+            case "protected": return "#";
+            default: return "+";
+
+        }
+    }
 }
