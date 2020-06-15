@@ -13,6 +13,7 @@ public class MyClass {
     private ArrayList<String> extendedList;
     private ArrayList<String> implementedList;
     private ArrayList<String> importList;
+    private ArrayList<String> associationList;
 
     private String className;
 
@@ -30,6 +31,7 @@ public class MyClass {
         importList = new ArrayList<>();
         dependencyList = new ArrayList<>();
         className = "";
+        associationList = new ArrayList<>();
     }
 
     public ArrayList<String> getExtendedList() {
@@ -75,6 +77,16 @@ public class MyClass {
     public void setImportList(List<String> importList) {
         this.importList = new ArrayList<>();
         this.importList.addAll(importList);
+    }
+
+    public ArrayList<String> getAssociationList() {
+        associationList = new ArrayList<>();
+        for (Triplet triplet: globalDep){
+            if (triplet.getSrc().equals(getClassName()) && triplet.getType().equals(DependEnum.ASSOCIATION)) {
+                associationList.add(triplet.getDes());
+            }
+        }
+        return associationList;
     }
 
     public String getClassName() {

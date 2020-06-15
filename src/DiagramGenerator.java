@@ -27,9 +27,9 @@ public class DiagramGenerator extends JPanel {
             @Override
             public int compare(MyClass o1, MyClass o2) {
                 int relationCount1 = (o1.getExtendedList().size() +o1.getImplementedList().size()) * 10
-                        + o1.getImportList().size();
+                        + o1.getImportList().size() + o1.getAssociationList().size() * 5;
                 int relationCount2 = (o2.getExtendedList().size() +o2.getImplementedList().size()) * 10
-                        + o2.getImportList().size();
+                        + o2.getImportList().size() + o2.getAssociationList().size() * 5;
                 return relationCount2 - relationCount1;
             }
         });
@@ -76,7 +76,6 @@ public class DiagramGenerator extends JPanel {
         for (Relation relation: relations){
             drawRelation(gp2d, relation);
         }
-
 //        testRelations(gp2d, localPositions, numberOfBox);
 
         drawAnnotation(gp2d);
@@ -94,6 +93,7 @@ public class DiagramGenerator extends JPanel {
         rawRelationList.put(DependEnum.REALIZATION, target.getImplementedList());
         rawRelationList.put(DependEnum.IMPORT, target.getImportList());
         rawRelationList.put(DependEnum.INHERITANCE, target.getExtendedList());
+        rawRelationList.put(DependEnum.ASSOCIATION, target.getAssociationList());
 
         ArrayList<Relation> relationList = new ArrayList<>();
         for (Map.Entry<DependEnum, ArrayList<String>> entry: rawRelationList.entrySet()){
