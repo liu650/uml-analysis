@@ -19,7 +19,7 @@ public class Main {
             // Get project directory from user
             Scanner scanner = new Scanner(System.in);
             System.out.println("Enter the path of your Project (preferably the path to your Model):");
-            System.out.println("try this: testModel/ast ... ");
+            System.out.println("try this: testModel/ ... ");
             String projectDirectory = scanner.nextLine();
 
             //TODO: just for testing

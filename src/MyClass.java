@@ -149,7 +149,9 @@ public class MyClass {
         findAssoDependency();
         // mark import as IMPORT
         for(String s: this.importList){
-            Triplet t = new Triplet(this.className,s, DependEnum.IMPORT);
+            String importString = s.contains(".") ? s.substring(s.lastIndexOf(".") + 1, s.length()) : s;
+            Triplet t = new Triplet(this.className,importString, DependEnum.IMPORT);
+
             if(!globalDep.contains(t)){
                 globalDep.add(t);
             }
