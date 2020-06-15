@@ -1,7 +1,10 @@
 package ast;
 
-public class PRINT extends STATEMENT {
+import java.util.ArrayList;
+import java.util.List;
 
+public class PRINT extends PROGRAM {
+    private final List<PROGRAM> programs = new ArrayList<>();
     private EXP printed;
 
     public EXP getPrinted() {

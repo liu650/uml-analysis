@@ -2,7 +2,7 @@ package ast;
 
 import ui.Main;
 
-public class NAME extends EXP {
+public class NAME extends PROGRAM {
 
     private String name;
 
