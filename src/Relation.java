@@ -42,6 +42,19 @@ public class Relation {
     public PositionPair getPositionPair() {
         return positionPair;
     }
+
+    public int getClassIndex1() {
+        return classIndex1;
+    }
+
+    public int getClassIndex2(){
+        return classIndex2;
+    }
+
+    public DependEnum getDependEnum() {
+        return dependEnum;
+    }
+
     public boolean getIsDashed(){
         return isDashed;
     }

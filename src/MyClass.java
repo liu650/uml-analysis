@@ -186,6 +186,10 @@ public class MyClass {
         }
     }
 
+    public static ArrayList<Triplet> getGlobalDep() {
+        return globalDep;
+    }
+
     public boolean hasSrcRelation(String className) {
         return (getImplementedList().contains(className) || getImportList().contains(className)
                 || getExtendedList().contains(className) || getAssociationList().contains(className));

@@ -24,7 +24,7 @@ public class Main {
 
             //TODO: just for testing
             if (projectDirectory.equals("  ")){
-                projectDirectory = "testModel/ast";
+                projectDirectory = "testModel/";
             }
 
             System.out.println("Path is : " + projectDirectory);
@@ -114,7 +114,7 @@ public class Main {
         Boolean isSuccess = true;
         for (String filePath: productionPath){
             if (new File(filePath).exists()) {
-                Runtime.getRuntime().exec("rm -r " + productionPath);
+                Runtime.getRuntime().exec("rm -r " + filePath);
             } else {
                 isSuccess = false;
             }

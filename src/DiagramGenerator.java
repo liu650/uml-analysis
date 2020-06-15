@@ -27,15 +27,7 @@ public class DiagramGenerator extends JPanel {
     private ArrayList<MyClass> classSelectorMethodFromUser(ArrayList<MyClass> givenClasses, String input) {
         Set<MyClass> res = new HashSet<>();
 
-        for(Triplet t: MyClass.globalDep){
-
-            // TODO: just for testing
-            if (t.getSrc().equalsIgnoreCase("Tokenizer") || t.getDes().equalsIgnoreCase("Tokenizer")){
-                if (t.getSrc().equalsIgnoreCase("node") || t.getDes().equalsIgnoreCase("node")) {
-                    t.getType();
-                }
-            }
-
+        for(Triplet t: MyClass.getGlobalDep()){
             if (t.getSrc().equalsIgnoreCase(input)){
                 for(MyClass c : givenClasses){
                     if (t.getDes().equalsIgnoreCase( c.getClassName()) && res.size() < 8){
@@ -126,9 +118,10 @@ public class DiagramGenerator extends JPanel {
 
         // draw all relations for target class, which is always the class in the center
         MyClass target = allClasses.get(Math.min(numberOfBox-1, 8));
-        ArrayList<Relation> relations = generateRelationList(numberOfBox, target);
+        ArrayList<Relation> relationsBoxIndex =
+                relationIndexToBoxIndex(generateRelationList(numberOfBox, target), numberOfBox);
 
-        for (Relation relation: relations){
+        for (Relation relation: relationsBoxIndex){
             drawRelation(gp2d, relation);
         }
 //        testRelations(gp2d, localPositions, numberOfBox);
@@ -143,25 +136,34 @@ public class DiagramGenerator extends JPanel {
         drawLine(gp2d, relation.getPositionPair(), relation.getIsDashed());
     }
 
-    private ArrayList<Relation> generateRelationList(int numberOfBox, MyClass target) {
-        HashMap<DependEnum, ArrayList<String>> rawRelationList = new HashMap<>();
-        rawRelationList.put(DependEnum.REALIZATION, target.getImplementedList());
-        rawRelationList.put(DependEnum.IMPORT, target.getImportList());
-        rawRelationList.put(DependEnum.INHERITANCE, target.getExtendedList());
-        rawRelationList.put(DependEnum.ASSOCIATION, target.getAssociationList());
+    private ArrayList<Relation> relationIndexToBoxIndex(ArrayList<Relation> relationsNaturalIndex, int numberOfBox){
+        ArrayList<Relation> relationsBoxIndex = new ArrayList<>();
+        int diff = numberOfBox - relationsBoxIndex.size() - 1;
+        if (diff <= 0){
+            return relationsNaturalIndex;
+        }
+        for (Relation r: relationsNaturalIndex){
+            relationsBoxIndex.add(new Relation(
+                    r.getClassIndex1() + diff, r.getClassIndex2() + diff, r.getDependEnum()));
+        }
+        return relationsBoxIndex;
+    }
 
+    private ArrayList<Relation> generateRelationList(int numberOfBox, MyClass target) {
         ArrayList<Relation> relationList = new ArrayList<>();
-        for (Map.Entry<DependEnum, ArrayList<String>> entry: rawRelationList.entrySet()){
-            DependEnum enumKey = entry.getKey();
-            for (String className2: entry.getValue()){
-                int c2Index = allClasses.indexOf(new MyClass(className2));
-                if (c2Index >= 0 && c2Index < Math.min(numberOfBox, allClasses.size())){
+        for (Triplet t:target.getGlobalDep()){
+            if (t.getDes().equalsIgnoreCase(target.getClassName())
+                    || t.getSrc().equalsIgnoreCase(target.getClassName())){
+                int srcIndex = allClasses.indexOf(new MyClass(t.getSrc()));
+                int dstIndex = allClasses.indexOf(new MyClass(t.getDes()));
+                if (srcIndex >= 0 && srcIndex < Math.min(numberOfBox, allClasses.size())
+                && dstIndex >= 0 && dstIndex < Math.min(numberOfBox, allClasses.size())){
                     // only consider classes in the range
-                    relationList.add(new Relation(Math.min(numberOfBox, allClasses.size()) - 1,
-                            c2Index, enumKey));
+                    relationList.add(new Relation(srcIndex, dstIndex, t.getType()));
                 }
             }
         }
+
         return relationList;
     }
 
