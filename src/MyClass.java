@@ -34,6 +34,8 @@ public class MyClass {
         methods = new ArrayList<>();
         importList = new ArrayList<>();
         dependencyList = new ArrayList<>();
+        implementedList=new ArrayList<>();
+        extendedList=new ArrayList<>();
         className = "";
         associationList = new ArrayList<>();
     }

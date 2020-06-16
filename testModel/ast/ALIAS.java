@@ -1,7 +1,10 @@
 package ast;
 
-public class ALIAS extends STATEMENT {
+import java.util.ArrayList;
+import java.util.List;
 
+public class ALIAS extends STATEMENT {
+    private final List<PROGRAM> programs = new ArrayList<>();
     private String newName;
 
     private String oldName;

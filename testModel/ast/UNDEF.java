@@ -1,7 +1,10 @@
 package ast;
 
-public class UNDEF extends STATEMENT {
+import java.util.ArrayList;
+import java.util.List;
 
+public class UNDEF extends STATEMENT {
+    private final List<PROGRAM> programs = new ArrayList<>();
     private String name;
 
     public String getName() {

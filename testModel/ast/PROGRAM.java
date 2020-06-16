@@ -4,10 +4,10 @@ import libs.Node;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PROGRAM extends Node {
+public class PROGRAM extends SET implements tinyVarsVisitor {
 
     private final List<STATEMENT> statements = new ArrayList<>();
-
+    private final List<tinyVarsEvaluator> tinyVarsEvaluators = new ArrayList<>();
     public List<STATEMENT> getStatements() {
         return statements;
     }
@@ -37,5 +37,45 @@ public class PROGRAM extends Node {
     @Override
     public <T> T accept(tinyVarsVisitor<T> v) {
         return v.visit(this);
+    }
+
+    @Override
+    public Object visit(PROGRAM p) {
+        return null;
+    }
+
+    @Override
+    public Object visit(DEC d) {
+        return null;
+    }
+
+    @Override
+    public Object visit(UNDEF u) {
+        return null;
+    }
+
+    @Override
+    public Object visit(ALIAS a) {
+        return null;
+    }
+
+    @Override
+    public Object visit(SET s) {
+        return null;
+    }
+
+    @Override
+    public Object visit(PRINT p) {
+        return null;
+    }
+
+    @Override
+    public Object visit(NAME n) {
+        return null;
+    }
+
+    @Override
+    public Object visit(NUMBER n) {
+        return null;
     }
 }
